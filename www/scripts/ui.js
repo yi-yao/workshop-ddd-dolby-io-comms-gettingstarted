@@ -288,7 +288,7 @@ const initUI = async () => {
 		VoxeetSDK.recording
 			.start()
 			.then(() => {
-				recordStatus.innerText = "Recording...";
+				recordStatus.innerText = "Recording...Always on by default";
 				//update ui
 				document.getElementById("start-recording-btn").classList.add("d-none");
 				document.getElementById("stop-recording-btn").classList.remove("d-none");

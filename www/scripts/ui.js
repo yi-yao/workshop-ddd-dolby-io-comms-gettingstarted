@@ -153,6 +153,7 @@ const initUI = async () => {
 			.start()
 			.then(() => {
 				recordStatus.innerText = "Recording...Always on by default";
+				document.getElementById("record-status").classList.remove("d-none");
 			})
 			.catch((err) => console.error(err));
 	};
@@ -169,6 +170,7 @@ const initUI = async () => {
 				//update ui
 				document.getElementById("start-recording-btn").classList.remove("d-none");
 				document.getElementById("stop-recording-btn").classList.add("d-none");
+				document.getElementById("record-status").classList.add("d-none");
 			})
 			.catch((err) => console.error(err));
 

@@ -127,8 +127,6 @@ const initUI = async () => {
 						document.getElementById("stop-video-btn").classList.remove("d-none");
 						document.getElementById("start-screenshare-btn").classList.remove("d-none");
 						document.getElementById("stop-screenshare-btn").classList.add("d-none");
-						document.getElementById("start-recording-btn").classList.remove("d-none");
-						document.getElementById("stop-recording-btn").classList.add("d-none");
 						document.getElementById("participants-settings").classList.remove("d-none");
 
 						document.getElementById("label-dolby-voice").innerHTML = `Dolby Voice ${
@@ -145,15 +143,14 @@ const initUI = async () => {
 					})
 					.catch((err) => console.error(err));
 			})
+
+			let recordStatus = document.getElementById("record-status");
 			.catch((err) => console.error(err));
 
 			VoxeetSDK.recording
 			.start()
 			.then(() => {
 				recordStatus.innerText = "Recording...Always on by default";
-				//update ui
-				document.getElementById("start-recording-btn").classList.add("d-none");
-				document.getElementById("stop-recording-btn").classList.remove("d-none");
 			})
 			.catch((err) => console.error(err));
 	};
@@ -194,8 +191,6 @@ const initUI = async () => {
 						document.getElementById("stop-audio-btn").classList.add("d-none");
 						document.getElementById("start-screenshare-btn").classList.add("d-none");
 						document.getElementById("stop-screenshare-btn").classList.add("d-none");
-						document.getElementById("start-recording-btn").classList.add("d-none");
-						document.getElementById("stop-recording-btn").classList.add("d-none");
 						document.getElementById("participants-settings").classList.add("d-none");
 					})
 					.catch((err) => console.error(err));

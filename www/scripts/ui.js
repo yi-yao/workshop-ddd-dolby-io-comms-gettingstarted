@@ -712,7 +712,7 @@ async function getResults() {
 		cell4.innerHTML = String(loud);
 		cell5.innerHTML = String(genre);
 	}
-	document.getElementById("myBtn").innerText = "Complete";
+	document.getElementById("process-btn").innerText = "Complete";
 	document.getElementById("download").disabled = false;
 	document.getElementById("download").style.visibility = "visible";
 
@@ -741,7 +741,7 @@ async function checkJobStatus(jobID) {
 
 	if (result.status == "Failed" || result.status == 401) {
 		console.log("ERROR: Job Failed");
-		const start_button = document.getElementById("myBtn");
+		const start_button = document.getElementById("process-btn");
 		start_button.innerText = "FAILED!";
 		throw new Error("Job Failed: Check file type and Media API Key");
 	} else if (result.progress != "100") {

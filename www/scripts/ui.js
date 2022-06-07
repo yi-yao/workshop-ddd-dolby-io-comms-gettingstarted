@@ -152,7 +152,7 @@ const initUI = async () => {
 							})
 
 						// Recording locator (both video and audio) meant to be deleted in full automation
-						document.getElementById("fname").classList.add("d-none");
+						document.getElementById("label-fname").classList.add("d-none");
 						document.getElementById("uploadInput").classList.add("d-none");
 						document.getElementById("fileSize").classList.add("d-none");
 						document.getElementById("uploadInput").disabled = true;
@@ -208,7 +208,7 @@ const initUI = async () => {
 						document.getElementById("stop-recording-btn").classList.add("d-none");
 						document.getElementById("participants-settings").classList.add("d-none");
 						// Recording locator (both video and audio) meant to be deleted in full automation
-						document.getElementById("fname").classList.remove("d-none");
+						document.getElementById("label-fname").classList.remove("d-none");
 						document.getElementById("uploadInput").classList.remove("d-none");
 						document.getElementById("fileSize").classList.remove("d-none");
 						document.getElementById("uploadInput").disabled = false;

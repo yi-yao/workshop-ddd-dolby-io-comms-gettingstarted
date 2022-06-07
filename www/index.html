@@ -143,7 +143,18 @@
                                             recording</button>
                                     </div>
                                     <p id="record-status" class="text-sm-center text-info" style="color: red;"></p>
-
+                                    <div>
+                                        <label for="fname">Choose target file:</label>
+                                        <input id="uploadInput" type="file" name="myFiles" disabled="True" />
+                                        <div id="fileSize">File Size: <span id="fileSize">0</span></div>
+                                    </div>
+                                    <div class="btn-toolbar p-2  gap-2 text-center">
+                                        <button id="upload-btn" class="btn btn-info btn-sm d-none"
+                                            type="button">Upload recording</button>
+                                        <button id="process-btn" class="btn btn-primary btn-sm d-none"
+                                            type="button">Processing</button>
+                                    </div>
+                                    <p id="process-status" class="text-sm-center text-info" style="color: red;"></p>
                                 </div>
 
                             </div>

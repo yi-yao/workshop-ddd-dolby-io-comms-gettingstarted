@@ -746,10 +746,10 @@ async function checkJobStatus(jobID) {
 		throw new Error("Job Failed: Check file type and Media API Key");
 	} else if (result.progress != "100") {
 		await delay(3000);
-		checkJobStatus(jobID, mAPIKey);
+		checkJobStatus(jobID);
 	} else {
 		elem.textContent = "Complete";
-		let results = getResults(mAPIKey);
+		let results = getResults();
 		return results;
 	}
 }
@@ -871,7 +871,7 @@ async function startAudioAnalysis() {
 		//Reset if something fails
 		document.getElementById("uploadInput").value = null;
 		document.getElementById("process-btn").disabled = false;
-		document.getElementById("process-btn").textContent = "Start Job";
+		document.getElementById("process-btn").textContent = "FAILED";
 		document.getElementById("process-btn").disabled = true;
 		document.getElementById("fileSize").innerHTML = "File Size: 0";
 	}

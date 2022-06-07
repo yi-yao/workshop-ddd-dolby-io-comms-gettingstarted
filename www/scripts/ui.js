@@ -661,13 +661,15 @@ const addMuteListeners = () => {
 	});
 };
 
-require("dotenv").config();
 const validFiles = ["wav", "mp3", "mp4", "m4a", "mov", "3gp", "m4b", "acc"]; //https://docs.dolby.io/media-apis/docs/supported-formats
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+//I know it is insecure, but only use it for demo purpose.
+const API_KEY = "xi0n0DImNYJKGrZSJJXFDm7ZJrVZvC4G"
+
 
 async function getResults() {
 	//Gets and displays the results of the Analyze job
-	const mAPIKey = process.env.API_KEY;
+	const mAPIKey = API_KEY;
 	let output_percent = document.getElementById("percentage_music");
 	let output_num = document.getElementById("number_of_music_sections");
 
@@ -723,7 +725,7 @@ async function getResults() {
 
 async function checkJobStatus(jobID) {
 	//Checks the status of the created job using the jobID
-	const mAPIKey = process.env.API_KEY;
+	const mAPIKey = API_KEY;
 	const options = {
 		method: "GET",
 		headers: { Accept: "application/json", "x-api-key": mAPIKey },
@@ -754,7 +756,7 @@ async function checkJobStatus(jobID) {
 
 async function startJob(fileLocation) {
 	//Starts an Analyze Job
-	const mAPIKey = process.env.API_KEY;
+	const mAPIKey = API_KEY;
 	const options = {
 		method: "POST",
 		headers: {
@@ -778,7 +780,7 @@ async function startJob(fileLocation) {
 
 async function uploadFile() {
 	//Uploads the file to the Dolby.io server
-	const mAPIKey = process.env.API_KEY;
+	const mAPIKey = API_KEY;
 	let audioFile = document.getElementById("uploadInput").files[0];
 	let formData = new FormData();
 	var xhr = new XMLHttpRequest();

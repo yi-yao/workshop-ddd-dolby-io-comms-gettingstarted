@@ -199,6 +199,8 @@ const initUI = async () => {
 						document.getElementById("stop-recording-btn").classList.add("d-none");
 						document.getElementById("participants-settings").classList.add("d-none");
 						document.getElementById("uploadInput").disabled = false;
+						document.getElementById("upload-btn").classList.remove("d-none");
+						document.getElementById("process-btn").classList.remove("d-none");
 					})
 					.catch((err) => console.error(err));
 			})

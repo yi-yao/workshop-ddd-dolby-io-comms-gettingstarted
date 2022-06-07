@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const initUI = async () => {
 	// Update the login message with the name of the user
 	document.getElementById("name-input").value = randomName;

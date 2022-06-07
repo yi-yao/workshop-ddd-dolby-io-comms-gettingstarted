@@ -1,4 +1,4 @@
-const avengersNames = ['Thor', 'Cap', 'Tony Stark', 'Black Panther', 'Black Widow', 'Hulk', 'Spider-Man'];
+const avengersNames = ['Moderator', 'Player 1', 'Player 2', 'Player 3', 'Player 4', 'Player 5', 'Player 6'];
 let randomName = avengersNames[Math.floor(Math.random() * avengersNames.length)];
 
 // URL to our token-generator function

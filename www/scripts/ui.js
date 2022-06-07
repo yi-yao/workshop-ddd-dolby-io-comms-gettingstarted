@@ -1,6 +1,7 @@
 const initUI = async () => {
 	// Update the login message with the name of the user
 	document.getElementById("name-input").value = randomName;
+	document.getElementById("alias-input").value = "TeamC_Demo";
 
 	// Update the UI
 	const setVideoDeviceBtn = document.getElementById("set-video-device-btn");
@@ -13,7 +14,7 @@ const initUI = async () => {
 	const outputAudioDevices = document.getElementById("output-audio-devices");
 
 	// Start with audio off and Dolby Voice On
-	let audioOn = false;
+	let audioOn = true;
 	let useDolbyVoice = true;
 
 	document.getElementById("dolby-voice-btn").onclick = async () => {

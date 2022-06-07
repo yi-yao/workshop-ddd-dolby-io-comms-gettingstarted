@@ -871,7 +871,6 @@ async function startAudioAnalysis() {
 	} catch {
 		//Reset if something fails
 		document.getElementById("uploadInput").value = null;
-		document.getElementById("mAPIKey").value = null;
 		document.getElementById("process-btn").disabled = false;
 		document.getElementById("process-btn").textContent = "Start Job";
 		document.getElementById("process-btn").disabled = true;

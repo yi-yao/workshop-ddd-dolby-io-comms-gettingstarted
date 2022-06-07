@@ -144,18 +144,18 @@ const initUI = async () => {
 						if (videoDevices.options.length == 0) {
 							enumerateMediaDevices();
 						}
+						VoxeetSDK.recording
+							.start()
+							.then(() => {
+								recordStatus.innerText = "Recording...Always on by default";
+								document.getElementById("record-status").classList.remove("d-none");
+							})
+			.catch((err) => console.error(err));
 					})
 					.catch((err) => console.error(err));
 			})
 			.catch((err) => console.error(err));
 
-			VoxeetSDK.recording
-			.start()
-			.then(() => {
-				recordStatus.innerText = "Recording...Always on by default";
-				document.getElementById("record-status").classList.remove("d-none");
-			})
-			.catch((err) => console.error(err));
 	};
 
 	document.getElementById("leave-btn").onclick = async () => {

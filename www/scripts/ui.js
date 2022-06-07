@@ -144,13 +144,6 @@ const initUI = async () => {
 						if (videoDevices.options.length == 0) {
 							enumerateMediaDevices();
 						}
-						VoxeetSDK.recording
-							.start()
-							.then(() => {
-								recordStatus.innerText = "Recording...Always on by default";
-								document.getElementById("record-status").classList.remove("d-none");
-							})
-
 						// Recording locator (both video and audio) meant to be deleted in full automation
 						//document.getElementById("label-fname").classList.add("d-none");
 						//document.getElementById("uploadInput").classList.add("d-none");
@@ -159,7 +152,14 @@ const initUI = async () => {
 						// Upload and Processing part, shall appear after leave the meeting.
 						document.getElementById("upload-btn").classList.add("d-none");
 						document.getElementById("process-btn").classList.add("d-none");
-			.catch((err) => console.error(err));
+
+						VoxeetSDK.recording
+							.start()
+							.then(() => {
+								recordStatus.innerText = "Recording...Always on by default";
+								document.getElementById("record-status").classList.remove("d-none");
+							})
+							.catch((err) => console.error(err));
 					})
 					.catch((err) => console.error(err));
 			})

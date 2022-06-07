@@ -152,9 +152,9 @@ const initUI = async () => {
 							})
 
 						// Recording locator (both video and audio) meant to be deleted in full automation
-						document.getElementById("label-fname").classList.add("d-none");
+						//document.getElementById("label-fname").classList.add("d-none");
 						document.getElementById("uploadInput").classList.add("d-none");
-						document.getElementById("fileSize").classList.add("d-none");
+						//document.getElementById("fileSize").classList.add("d-none");
 						document.getElementById("uploadInput").disabled = true;
 						// Upload and Processing part, shall appear after leave the meeting.
 						document.getElementById("upload-btn").classList.add("d-none");
@@ -208,9 +208,9 @@ const initUI = async () => {
 						document.getElementById("stop-recording-btn").classList.add("d-none");
 						document.getElementById("participants-settings").classList.add("d-none");
 						// Recording locator (both video and audio) meant to be deleted in full automation
-						document.getElementById("label-fname").classList.remove("d-none");
+						//document.getElementById("label-fname").classList.remove("d-none");
 						document.getElementById("uploadInput").classList.remove("d-none");
-						document.getElementById("fileSize").classList.remove("d-none");
+						//document.getElementById("fileSize").classList.remove("d-none");
 						document.getElementById("uploadInput").disabled = false;
 						// Upload and Processing part, shall appear after leave the meeting.
 						document.getElementById("upload-btn").classList.remove("d-none");

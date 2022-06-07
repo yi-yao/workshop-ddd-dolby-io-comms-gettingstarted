@@ -745,7 +745,9 @@ async function checkJobStatus(jobID) {
 		start_button.innerText = "FAILED!";
 		throw new Error("Job Failed: Check file type and Media API Key");
 	} else if (result.progress != "100") {
+		console.log("Info: Job wait");
 		await delay(3000);
+		console.log("Info: Job wait.");
 		checkJobStatus(jobID);
 	} else {
 		elem.textContent = "Complete";

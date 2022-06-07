@@ -795,7 +795,7 @@ async function uploadFile() {
 		},
 		body: JSON.stringify({ url: "dlb://file_input.".concat("wav") }),
 	};
-	document.getElementById("myBtn").innerText = "Uploading ...";
+	document.getElementById("process-btn").innerText = "Uploading ...";
 
 	let resp = await fetch("https://api.dolby.com/media/input", options)
 		.then((response) => response.json())
@@ -824,7 +824,7 @@ async function uploadFile() {
 
 function updateSize() {
 	//Function for stating the size of the selected file
-	const start_button = document.getElementById("myBtn");
+	const start_button = document.getElementById("process-btn");
 
 	let nBytes = 0,
 		oFiles = this.files,
@@ -861,20 +861,20 @@ async function startAudioAnalysis() {
 		let mAPIKey = document.getElementById("mAPIKey").value;
 		let fileType = selectedFile.value.split(".")[1];
 
-		document.getElementById("myBtn").disabled = true;
+		document.getElementById("process-btn").disabled = true;
 		selectedFile.disabled = true;
 
 		let fileLocation = await Promise.resolve(uploadFile(fileType, mAPIKey).then((results) => results));
-		document.getElementById("myBtn").innerText = "Running...";
+		document.getElementById("process-btn").innerText = "Running...";
 		let jobID = await startJob(fileLocation, mAPIKey).then((results) => results);
 		let results = await checkJobStatus(jobID, mAPIKey).then((results) => results);
 	} catch {
 		//Reset if something fails
 		document.getElementById("uploadInput").value = null;
 		document.getElementById("mAPIKey").value = null;
-		document.getElementById("myBtn").disabled = false;
-		document.getElementById("myBtn").textContent = "Start Job";
-		document.getElementById("myBtn").disabled = true;
+		document.getElementById("process-btn").disabled = false;
+		document.getElementById("process-btn").textContent = "Start Job";
+		document.getElementById("process-btn").disabled = true;
 		document.getElementById("fileSize").innerHTML = "File Size: 0";
 	}
 }

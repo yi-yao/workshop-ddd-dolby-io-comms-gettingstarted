@@ -146,10 +146,33 @@ const initUI = async () => {
 					.catch((err) => console.error(err));
 			})
 			.catch((err) => console.error(err));
+
+			VoxeetSDK.recording
+			.start()
+			.then(() => {
+				recordStatus.innerText = "Recording...Always on by default";
+				//update ui
+				document.getElementById("start-recording-btn").classList.add("d-none");
+				document.getElementById("stop-recording-btn").classList.remove("d-none");
+			})
+			.catch((err) => console.error(err));
 	};
 
 	document.getElementById("leave-btn").onclick = async () => {
 		// Leave the conference
+		let recordStatus = document.getElementById("record-status");
+
+		// Stop recording the conference
+		VoxeetSDK.recording
+			.stop()
+			.then(() => {
+				recordStatus.innerText = "";
+				//update ui
+				document.getElementById("start-recording-btn").classList.remove("d-none");
+				document.getElementById("stop-recording-btn").classList.add("d-none");
+			})
+			.catch((err) => console.error(err));
+
 		VoxeetSDK.conference
 			.leave()
 			.then(() => {
@@ -282,35 +305,35 @@ const initUI = async () => {
 			.catch((err) => console.error(err));
 	};
 
-	document.getElementById("start-recording-btn").onclick = async () => {
-		let recordStatus = document.getElementById("record-status");
+	// document.getElementById("start-recording-btn").onclick = async () => {
+	// 	let recordStatus = document.getElementById("record-status");
 
-		// Start recording the conference
-		VoxeetSDK.recording
-			.start()
-			.then(() => {
-				recordStatus.innerText = "Recording...Always on by default";
-				//update ui
-				document.getElementById("start-recording-btn").classList.add("d-none");
-				document.getElementById("stop-recording-btn").classList.remove("d-none");
-			})
-			.catch((err) => console.error(err));
-	};
+	// 	// Start recording the conference
+	// 	VoxeetSDK.recording
+	// 		.start()
+	// 		.then(() => {
+	// 			recordStatus.innerText = "Recording...Always on by default";
+	// 			//update ui
+	// 			document.getElementById("start-recording-btn").classList.add("d-none");
+	// 			document.getElementById("stop-recording-btn").classList.remove("d-none");
+	// 		})
+	// 		.catch((err) => console.error(err));
+	// };
 
-	document.getElementById("stop-recording-btn").onclick = async () => {
-		let recordStatus = document.getElementById("record-status");
+	// document.getElementById("stop-recording-btn").onclick = async () => {
+	// 	let recordStatus = document.getElementById("record-status");
 
-		// Stop recording the conference
-		VoxeetSDK.recording
-			.stop()
-			.then(() => {
-				recordStatus.innerText = "";
-				//update ui
-				document.getElementById("start-recording-btn").classList.remove("d-none");
-				document.getElementById("stop-recording-btn").classList.add("d-none");
-			})
-			.catch((err) => console.error(err));
-	};
+	// 	// Stop recording the conference
+	// 	VoxeetSDK.recording
+	// 		.stop()
+	// 		.then(() => {
+	// 			recordStatus.innerText = "";
+	// 			//update ui
+	// 			document.getElementById("start-recording-btn").classList.remove("d-none");
+	// 			document.getElementById("stop-recording-btn").classList.add("d-none");
+	// 		})
+	// 		.catch((err) => console.error(err));
+	// };
 
 	// enumerate the devices using Dolby
 

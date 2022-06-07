@@ -214,11 +214,23 @@ const initUI = async () => {
 						document.getElementById("uploadInput").disabled = false;
 						// Upload and Processing part, shall appear after leave the meeting.
 						document.getElementById("upload-btn").classList.remove("d-none");
-						document.getElementById("process-btn").classList.remove("d-none");
+						document.getElementById("process-btn").classList.add("d-none");
 					})
 					.catch((err) => console.error(err));
 			})
 			.catch((err) => console.error(err));
+	};
+
+	document.getElementById("upload-btn").onclick = async () => {
+			document.getElementById("upload-btn").classList.add("d-none");
+			document.getElementById("process-btn").classList.remove("d-none");
+			uploadFile().catch((err) => console.error(err));
+	};
+
+	document.getElementById("process-btn").onclick = async () => {
+			document.getElementById("upload-btn").classList.remove("d-none");
+			document.getElementById("process-btn").classList.add("d-none");
+
 	};
 
 	// Determine and update UI based on who is speaking
@@ -763,13 +775,13 @@ async function startJob(fileLocation) {
 	return resp.job_id;
 }
 
-async function uploadFile(fileType) {
+async function uploadFile() {
 	//Uploads the file to the Dolby.io server
 	const mAPIKey = process.env.API_KEY;
 	let audioFile = document.getElementById("uploadInput").files[0];
 	let formData = new FormData();
 	var xhr = new XMLHttpRequest();
-	formData.append(fileType, audioFile);
+	formData.append("wav", audioFile);
 
 	const options = {
 		method: "POST",
@@ -778,7 +790,7 @@ async function uploadFile(fileType) {
 			"Content-Type": "application/json",
 			"x-api-key": mAPIKey,
 		},
-		body: JSON.stringify({ url: "dlb://file_input.".concat(fileType) }),
+		body: JSON.stringify({ url: "dlb://file_input.".concat("wav") }),
 	};
 	document.getElementById("myBtn").innerText = "Uploading ...";
 
@@ -788,7 +800,7 @@ async function uploadFile(fileType) {
 	console.log(resp.url);
 
 	xhr.open("PUT", resp.url, true);
-	xhr.setRequestHeader("Content-Type", fileType);
+	xhr.setRequestHeader("Content-Type", "wav");
 	xhr.onload = () => {
 		if (xhr.status === 200) {
 			console.log("File Upload Success");
@@ -804,7 +816,7 @@ async function uploadFile(fileType) {
 		rs = xhr.readyState;
 	}
 
-	return "dlb://file_input.".concat(fileType);
+	return "dlb://file_input.".concat("wav");
 }
 
 function updateSize() {

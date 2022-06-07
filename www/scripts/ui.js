@@ -731,7 +731,7 @@ async function checkJobStatus(jobID) {
 		headers: { Accept: "application/json", "x-api-key": mAPIKey },
 	};
 
-	let result = await fetch("https://api.dolby.com/media/diagnose?job_id=".concat(jobID), options).then((response) =>
+	let result = await fetch("https://api.dolby.com/media/analyze?job_id=".concat(jobID), options).then((response) =>
 		response.json()
 	);
 	console.log(result);
@@ -771,7 +771,7 @@ async function startJob(fileLocation) {
 		}),
 	};
 
-	let resp = await fetch("https://api.dolby.com/media/diagnose", options)
+	let resp = await fetch("https://api.dolby.com/media/analyze", options)
 		.then((response) => response.json())
 		.catch((err) => console.error(err));
 	console.log(resp);

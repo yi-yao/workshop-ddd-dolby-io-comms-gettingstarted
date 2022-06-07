@@ -858,7 +858,6 @@ async function startAudioAnalysis() {
 	try {
 		console.log("Job starting");
 		let selectedFile = document.getElementById("uploadInput");
-		let mAPIKey = document.getElementById("mAPIKey").value;
 		let fileType = selectedFile.value.split(".")[1];
 
 		document.getElementById("process-btn").disabled = true;
@@ -866,8 +865,8 @@ async function startAudioAnalysis() {
 
 		let fileLocation = await Promise.resolve(uploadFile().then((results) => results));
 		document.getElementById("process-btn").innerText = "Running...";
-		let jobID = await startJob(fileLocation, mAPIKey).then((results) => results);
-		let results = await checkJobStatus(jobID, mAPIKey).then((results) => results);
+		let jobID = await startJob(fileLocation).then((results) => results);
+		let results = await checkJobStatus(jobID).then((results) => results);
 	} catch {
 		//Reset if something fails
 		document.getElementById("uploadInput").value = null;

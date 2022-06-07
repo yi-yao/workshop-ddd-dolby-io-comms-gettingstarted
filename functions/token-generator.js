@@ -9,6 +9,7 @@ to match CONSUMER_KEY, CONSUMER_SECRET
 const SITE_URL = process.env.URL;
 const CONSUMER_KEY = process.env.CONSUMER_KEY;
 const CONSUMER_SECRET = process.env.CONSUMER_SECRET;
+const API_KEY = rocess.env.API_KEY;
 const credentials = new Buffer.from(CONSUMER_KEY + ":" + CONSUMER_SECRET).toString("base64");
 const url = "https://session.voxeet.com/v1/oauth2/token";
 const config = {
@@ -40,6 +41,10 @@ async function fetchToken() {
 			body: JSON.stringify({ error: "Unexpected error" }),
 		};
 	}
+}
+
+async function getAPIKEY() {
+	return API_KEY;
 }
 
 exports.handler = async (event) => {

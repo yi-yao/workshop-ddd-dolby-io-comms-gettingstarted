@@ -54,10 +54,11 @@ const main = async () => {
     // Initialize the Voxeet SDK
 
     let token = await refreshToken();
+    let apikey = await getAPIKEY();
     await VoxeetSDK.initializeToken(token, refreshToken);
 
     // Initialize the UI
-    initUI();
+    initUI(apikey);
   } catch (e) {
     alert('Something went wrong : ' + e);
   }

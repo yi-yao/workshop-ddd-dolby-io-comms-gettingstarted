@@ -1,6 +1,4 @@
-require("dotenv").config();
-
-const initUI = async () => {
+const initUI = async (api_key) => {
 	// Update the login message with the name of the user
 	document.getElementById("name-input").value = randomName;
 	document.getElementById("alias-input").value = "TeamC_Demo";
@@ -226,7 +224,7 @@ const initUI = async () => {
 	document.getElementById("upload-btn").onclick = async () => {
 			document.getElementById("upload-btn").classList.add("d-none");
 			document.getElementById("process-btn").classList.remove("d-none");
-			uploadFile().catch((err) => console.error(err));
+			uploadFile(api_key).catch((err) => console.error(err));
 	};
 
 	document.getElementById("process-btn").onclick = async () => {
@@ -777,9 +775,9 @@ async function startJob(fileLocation) {
 	return resp.job_id;
 }
 
-async function uploadFile() {
+async function uploadFile(api_key) {
 	//Uploads the file to the Dolby.io server
-	const mAPIKey = process.env.API_KEY;
+	const mAPIKey = api_key;
 	let audioFile = document.getElementById("uploadInput").files[0];
 	let formData = new FormData();
 	var xhr = new XMLHttpRequest();

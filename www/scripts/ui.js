@@ -224,7 +224,7 @@ const initUI = async () => {
 	document.getElementById("upload-btn").onclick = async () => {
 			document.getElementById("upload-btn").classList.add("d-none");
 			document.getElementById("process-btn").classList.remove("d-none");
-			uploadFile().catch((err) => console.error(err));
+			startAudioAnalysis().catch((err) => console.error(err));
 	};
 
 	document.getElementById("process-btn").onclick = async () => {

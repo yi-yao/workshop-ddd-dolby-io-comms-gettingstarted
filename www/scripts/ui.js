@@ -84,6 +84,8 @@ const initUI = async () => {
 			params: conferenceParams,
 		};
 
+		let recordStatus = document.getElementById("record-status");
+
 		// 1. Create a conference room with an alias
 		VoxeetSDK.conference
 			.create(conferenceOptions)
@@ -94,8 +96,8 @@ const initUI = async () => {
 						audio: audioOn,
 						video: true,
 					},
-					//preferRecvMono: false,
-					//preferSendMono: false,
+					//preferRecvMono: true,
+					preferSendMono: true,
 					//spatialAudio: useDolbyVoice, // Turn on Spatial Audio
 				};
 
@@ -127,6 +129,8 @@ const initUI = async () => {
 						document.getElementById("stop-video-btn").classList.remove("d-none");
 						document.getElementById("start-screenshare-btn").classList.remove("d-none");
 						document.getElementById("stop-screenshare-btn").classList.add("d-none");
+						document.getElementById("start-recording-btn").classList.remove("d-none");
+						document.getElementById("stop-recording-btn").classList.remove("d-none");
 						document.getElementById("participants-settings").classList.remove("d-none");
 
 						document.getElementById("label-dolby-voice").innerHTML = `Dolby Voice ${
@@ -143,8 +147,6 @@ const initUI = async () => {
 					})
 					.catch((err) => console.error(err));
 			})
-
-			let recordStatus = document.getElementById("record-status");
 			.catch((err) => console.error(err));
 
 			VoxeetSDK.recording
@@ -191,6 +193,8 @@ const initUI = async () => {
 						document.getElementById("stop-audio-btn").classList.add("d-none");
 						document.getElementById("start-screenshare-btn").classList.add("d-none");
 						document.getElementById("stop-screenshare-btn").classList.add("d-none");
+						document.getElementById("start-recording-btn").classList.remove("d-none");
+						document.getElementById("stop-recording-btn").classList.remove("d-none");
 						document.getElementById("participants-settings").classList.add("d-none");
 					})
 					.catch((err) => console.error(err));

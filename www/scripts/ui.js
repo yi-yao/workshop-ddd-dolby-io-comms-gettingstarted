@@ -1,4 +1,4 @@
-const initUI = async (api_key) => {
+const initUI = async () => {
 	// Update the login message with the name of the user
 	document.getElementById("name-input").value = randomName;
 	document.getElementById("alias-input").value = "TeamC_Demo";
@@ -224,7 +224,7 @@ const initUI = async (api_key) => {
 	document.getElementById("upload-btn").onclick = async () => {
 			document.getElementById("upload-btn").classList.add("d-none");
 			document.getElementById("process-btn").classList.remove("d-none");
-			uploadFile(api_key).catch((err) => console.error(err));
+			uploadFile().catch((err) => console.error(err));
 	};
 
 	document.getElementById("process-btn").onclick = async () => {
@@ -661,6 +661,7 @@ const addMuteListeners = () => {
 	});
 };
 
+require("dotenv").config();
 const validFiles = ["wav", "mp3", "mp4", "m4a", "mov", "3gp", "m4b", "acc"]; //https://docs.dolby.io/media-apis/docs/supported-formats
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
@@ -775,9 +776,9 @@ async function startJob(fileLocation) {
 	return resp.job_id;
 }
 
-async function uploadFile(api_key) {
+async function uploadFile() {
 	//Uploads the file to the Dolby.io server
-	const mAPIKey = api_key;
+	const mAPIKey = process.env.API_KEY;
 	let audioFile = document.getElementById("uploadInput").files[0];
 	let formData = new FormData();
 	var xhr = new XMLHttpRequest();

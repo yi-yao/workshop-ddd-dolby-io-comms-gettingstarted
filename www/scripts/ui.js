@@ -602,7 +602,7 @@ const addScreenShareNode = (stream) => {
 
 	screenShareNode = document.createElement("video");
 	screenShareNode.setAttribute("id", "screenshare");
-	screenShareNode.classList.add("w-75");
+	screenShareNode.classList.add("w-100");
 	screenShareNode.autoplay = "autoplay";
 	screenShareNode.setAttribute("controls", true);
 	navigator.attachMediaStream(screenShareNode, stream);

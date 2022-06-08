@@ -240,6 +240,8 @@ body {
   display: grid;
   -ms-grid-rows: 1fr auto;
       grid-template-rows: 1fr auto;
+  gap: 24px;
+  padding-right: 40px;
 }
 
 .mainContent .workArea .videoContent .screenShareContent {
@@ -252,7 +254,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   border: 8px solid #181A24;
-  border-radius: 16px 0 16px 0;
+  border-radius: 72px 0;
   background-color: #13141C;
 }
 

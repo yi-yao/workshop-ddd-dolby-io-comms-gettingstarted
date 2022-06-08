@@ -41,14 +41,14 @@
             <li id="nav-settings" class="nav-item">
                 <a class="btn btn-tertiary" data-bs-toggle="offcanvas" href="#mediaSettingsPanel" role="button"
                     aria-controls="mediaSettingsPanel">
-                        Device settings
+                    Device settings
                 </a>
             </li>
 
             <li id="participants-settings" class="nav-item">
                 <a class="btn btn-tertiary" data-bs-toggle="offcanvas" href="#participantsPanel" role="button"
                     aria-controls="participantsPanel">
-                        Participants
+                    Participants
                 </a>
             </li>
 
@@ -89,8 +89,6 @@
                     <div class="card-body">
                         <h5 class="card-title" id="name-message"></h5>
 
-
-                        <!-- Controls -->
                         <!-- Actions on Video and Screen Share -->
                         <div id="actions">
                             <div class="actionsBar threeElements">
@@ -99,24 +97,38 @@
                                 <button id="stop-screenshare-btn" class="btn btn-secondary btn-sm d-none"
                                     type="button">Stop
                                     screen share</button>
-                                <!-- <button id="start-recording-btn" class="btn btn-primary btn-sm"
-                                            type="button">Start
-                                            recording</button>
-                                        <button id="stop-recording-btn" class="btn btn-info btn-sm"
-                                            type="button">Stop
-                                            recording</button> -->
+                                <button id="start-video-btn" class="btn btn-tertiary btn-icon btn-sm d-none"
+                                    type="button" style="grid-column: 2;">
+                                    <img src="./assets/img/cameraOff.svg" />
+                                </button>
+                                <button id="stop-video-btn" class="btn btn-tertiary btn-icon btn-sm" type="button"
+                                    style="grid-column: 2;">
+                                    <img src="./assets/img/cameraOn.svg" />
+                                </button>
+                                <button id="start-audio-btn" class="btn btn-tertiary btn-icon btn-sm d-none"
+                                    type="button" style="grid-column: 3;">
+                                    <img src="./assets/img/volumeOff.svg" />
+                                </button>
+                                <button id="stop-audio-btn" class="btn btn-tertiary btn-icon btn-sm" type="button"
+                                    style="grid-column: 3;">
+                                    <img src="./assets/img/volumeOn.svg" /></button>
                             </div>
                         </div>
 
+
+                        <!--  Dolby Voice -->
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="dolby-voice-btn" checked>
+                            <label id="label-dolby-voice" class="form-check-label text-info" for="dolby-voice-btn">Dolby
+                                Voice On</label>
+                        </div>
+
                     </div>
-
-
-
-
                 </div>
+
                 <div class="card">
                     <div class="card-body">
-                        
+
                         <!-- Controls -->
                         <!-- Actions on Video and Screen Share -->
                         <div class="actionsBar">
@@ -144,9 +156,6 @@
                     </div>
 
                 </div>
-
-
-
 
             </div>
 

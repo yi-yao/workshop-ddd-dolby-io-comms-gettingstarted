@@ -285,11 +285,6 @@ body {
           flex-direction: column;
 }
 
-.mainContent .workArea .videoContent .playersThumbnails .video-card-body .videoData span {
-  color: #ffffff !important;
-  font-size: 16px;
-}
-
 .mainContent .workArea .videoContent .playersThumbnails .video-card-body .videoData .thumbnailDetails {
   display: -webkit-box;
   display: -ms-flexbox;

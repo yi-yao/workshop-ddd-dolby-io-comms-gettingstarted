@@ -33,11 +33,11 @@ body {
     @include tertiaryText;
 }
 
-h1{
+h1 {
     color: #ffffff !important;
     font-size: 28px;
 
-    &.card-title{
+    &.card-title {
         text-align: center;
         margin: 16px 0 32px 0;
     }
@@ -219,12 +219,12 @@ h1{
             padding: 0 24px;
         }
 
-        .downloadFormBrief{
+        .downloadFormBrief {
             display: flex;
             flex-direction: column;
             justify-content: center;
 
-            a{
+            a {
                 margin: 0 auto;
             }
         }
@@ -270,7 +270,7 @@ h1{
                 border-radius: 72px 0;
                 background-color: #13141C;
 
-                span{
+                span {
                     @include tertiaryText;
                     margin: 0 auto;
                     max-width: 360px;
@@ -361,4 +361,40 @@ h1{
         margin-left: 8px;
     }
 
+}
+
+@keyframes example {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+ul {
+    //list-style-image: url('../../img/iconCheck.svg');
+
+    li {
+        background: url('../../img/iconCheck.svg') no-repeat left center;
+        padding: 5px 10px 5px 36px;
+        list-style: none;
+        margin: 0 0 8px 0;
+        vertical-align: middle;
+        opacity: 0;
+
+        
+        animation-name: example;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+
+        
+    }
+
+    @for $i from 0 through 8 {
+        li:nth-child(#{$i}n) {
+            animation-delay: #{$i * 1}s;
+        }
+    }
 }

@@ -427,4 +427,82 @@ h1.card-title {
   font-size: 16px;
   margin-left: 8px;
 }
+
+@-webkit-keyframes example {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes example {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+ul li {
+  background: url("../../img/iconCheck.svg") no-repeat left center;
+  padding: 5px 10px 5px 36px;
+  list-style: none;
+  margin: 0 0 8px 0;
+  vertical-align: middle;
+  opacity: 0;
+  -webkit-animation-name: example;
+          animation-name: example;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+ul li:nth-child(0n) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+ul li:nth-child(1n) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+ul li:nth-child(2n) {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+ul li:nth-child(3n) {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+ul li:nth-child(4n) {
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+
+ul li:nth-child(5n) {
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+}
+
+ul li:nth-child(6n) {
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+}
+
+ul li:nth-child(7n) {
+  -webkit-animation-delay: 7s;
+          animation-delay: 7s;
+}
+
+ul li:nth-child(8n) {
+  -webkit-animation-delay: 8s;
+          animation-delay: 8s;
+}
 /*# sourceMappingURL=overrides.css.map */

@@ -792,9 +792,14 @@ async function startJob(fileLocation) {
 			"x-api-key": mAPIKey,
 		},
 		body: JSON.stringify({
-			content: {},
 			input: fileLocation,
-			output: "dlb://out/file_output_teamC.wav",
+			outputs: [
+        		{
+            "id" : "my_wav",
+            "destination" : "dlb://out/output.wav",
+            "kind" : "wav"
+        		}
+    		]
 		}),
 	};
 	console.log(options)

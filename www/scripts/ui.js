@@ -801,6 +801,7 @@ async function uploadFile() {
 	let resp = await fetch("https://api.dolby.com/media/input", options)
 		.then((response) => response.json())
 		.catch((err) => console.error(err));
+	console.log(options)
 	console.log(resp.url);
 
 	xhr.open("PUT", resp.url, true);

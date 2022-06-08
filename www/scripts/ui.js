@@ -629,18 +629,21 @@ const buildVideoNode = (name, id) => {
 	let cardBodyID = "video-card-body-" + id;
 	let videoID = "video-" + id;
 	let randomFollowers = Math.floor(Math.random() * 10000) + 1000;
+	let color = (Math.random()>0.5) ? "#24BC5B" : "#FF4C3F";
 
 	let node = `       
   <div id="${cardID}"  class="col.12 col-sm-4">
-  <div class="card d-xl-flex flex-shrink-1 justify-content-xl-center align-items-xl-center" 
-  style="margin: 6px;margin-top: 5px;margin-right: 5px;margin-bottom: 5px;margin-left: 5px;">
+  <div class="card">
       <div id="${cardBodyID}" class="card-body video-card-body">
-   		<video id="${videoID}" class="video-player" width="100%" height="100%" autoplay="" playsinline="true" muted style="width: 100%;height: 100%;">
+   		<video id="${videoID}" class="video-player" autoplay="" playsinline="true" muted">
       	</video>
         
 		<div class="videoData">
 			<span>${name}</span>
-			<span class="secondaryText">${randomFollowers}</span>
+			<div class="thumbnailDetails">
+				<div style="width:6px; height:6px; background-color:'${color}' margin-right:4px; float: left"</div>
+				<span class="secondaryText">${randomFollowers}</span>
+			</div>
           <div class="mic" style="width=16px; height=16px;"></div>
           <div class="btn-toolbar text-sm-center d-xl-flex d-xxl-flex justify-content-xl-end align-items-xl-center justify-content-xxl-end align-items-xxl-center">
           <div class="form-check form-switch d-none">

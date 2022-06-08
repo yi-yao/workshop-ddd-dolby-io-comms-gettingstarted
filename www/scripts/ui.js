@@ -816,7 +816,8 @@ async function uploadFile() {
 	};
 	formData.append("wav", audioFile);
 	console.log(audioFile);
-	console.log(formData)
+	console.log(formData);
+	console.log(formData.get("wav"));
 	xhr.send(formData);
 	let rs = xhr.readyState;
 	while (rs != 4) {

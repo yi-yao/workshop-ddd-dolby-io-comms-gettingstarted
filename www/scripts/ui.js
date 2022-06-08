@@ -783,7 +783,7 @@ async function uploadFile() {
 	//Uploads the file to the Dolby.io server
 	const mAPIKey = API_KEY;
 	let audioFile = document.getElementById("uploadInput").files[0];
-	let formData = new FormData();
+	var formData = new FormData();
 	var xhr = new XMLHttpRequest();
 
 
@@ -805,7 +805,7 @@ async function uploadFile() {
 	console.log(resp.url);
 
 	xhr.open("PUT", resp.url, true);
-	xhr.setRequestHeader("Content-Type", "multipart/form-data");
+	xhr.setRequestHeader("Content-Type", "wav");
 	xhr.onload = () => {
 		if (xhr.status === 200) {
 			console.log("File Upload Success");
@@ -814,7 +814,7 @@ async function uploadFile() {
 	xhr.onerror = () => {
 		console.log("error");
 	};
-	formData.append("upload", audioFile);
+	formData.append("wav", audioFile);
 	console.log(audioFile);
 	console.log(formData)
 	xhr.send(formData);

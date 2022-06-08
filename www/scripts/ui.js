@@ -518,7 +518,7 @@ const addVideoNode = (participant, stream) => {
 		// insert the video card
 		if(participant.info.name == "Moderator")
 		{
-			document.getElementById("moderatorThumbnail".innerHTML = "";
+			document.getElementById("moderatorThumbnail").innerHTML = "";
 			document.getElementById("moderatorThumbnail").insertAdjacentHTML("beforeend", cardNode);
 		}
 		else

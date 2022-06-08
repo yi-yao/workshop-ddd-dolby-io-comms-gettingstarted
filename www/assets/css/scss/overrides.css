@@ -414,6 +414,10 @@ h1.card-title {
           align-items: center;
 }
 
+.mainContent .workArea .videoContent .playersThumbnails .video-card-body .videoData .thumbnailDetails .secondaryText {
+  font-size: 14px;
+}
+
 .mainContent .workArea .playerAndConnections {
   -ms-grid-column: 2;
   grid-column: 2;

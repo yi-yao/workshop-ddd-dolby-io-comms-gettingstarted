@@ -631,7 +631,7 @@ const buildVideoNode = (name, id) => {
 			<span class="primaryText">${name}</span>
 			<div class="thumbnailDetails">
 				<div style="width:6px; height:6px; background-color:${color}; margin-right:4px; border-radius:3px; float: left"></div>
-				<span class="secondaryText">${randomFollowers}</span>
+				<span class="secondaryText small">${randomFollowers}</span>
 			</div>
           <div class="mic" style="width=16px; height=16px;"></div>
           <div class="btn-toolbar text-sm-center d-xl-flex d-xxl-flex justify-content-xl-end align-items-xl-center justify-content-xxl-end align-items-xxl-center">

@@ -347,6 +347,10 @@ h1 {
                         .thumbnailDetails {
                             display: flex;
                             align-items: center;
+
+                            .secondaryText{
+                                font-size: 14px;
+                            }
                         }
                     }
                 }

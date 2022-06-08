@@ -781,46 +781,46 @@ async function startJob(fileLocation) {
 
 async function uploadFile() {
 	//Uploads the file to the Dolby.io server
-	const mAPIKey = API_KEY;
-	let audioFile = document.getElementById("uploadInput").files[0];
-	let formData = new FormData();
-	var xhr = new XMLHttpRequest();
-	formData.append("wav", audioFile);
+	// const mAPIKey = API_KEY;
+	// let audioFile = document.getElementById("uploadInput").files[0];
+	// let formData = new FormData();
+	// var xhr = new XMLHttpRequest();
+	// formData.append("wav", audioFile);
 
-	const options = {
-		method: "POST",
-		headers: {
-			Accept: "application/json",
-			"Content-Type": "application/json",
-			"x-api-key": mAPIKey,
-		},
-		body: JSON.stringify({ url: "dlb://in/file_input_teamC.".concat("wav") }),
-	};
-	document.getElementById("process-btn").innerText = "Uploading ...";
+	// const options = {
+	// 	method: "POST",
+	// 	headers: {
+	// 		Accept: "application/json",
+	// 		"Content-Type": "application/json",
+	// 		"x-api-key": mAPIKey,
+	// 	},
+	// 	body: JSON.stringify({ url: "dlb://in/file_input_teamC.".concat("wav") }),
+	// };
+	// document.getElementById("process-btn").innerText = "Uploading ...";
 
-	let resp = await fetch("https://api.dolby.com/media/input", options)
-		.then((response) => response.json())
-		.catch((err) => console.error(err));
-	console.log(options)
-	console.log(resp.url);
+	// let resp = await fetch("https://api.dolby.com/media/input", options)
+	// 	.then((response) => response.json())
+	// 	.catch((err) => console.error(err));
+	// console.log(options)
+	// console.log(resp.url);
 
-	xhr.open("PUT", resp.url, true);
-	xhr.setRequestHeader("Content-Type", "wav");
-	xhr.onload = () => {
-		if (xhr.status === 200) {
-			console.log("File Upload Success");
-		}
-	};
-	xhr.onerror = () => {
-		console.log("error");
-	};
-	xhr.send(formData);
-	let rs = xhr.readyState;
-	while (rs != 4) {
-		await delay(1000); //Delay to slow readyState checking
-		rs = xhr.readyState;
-		console.log("uploading")
-	}
+	// xhr.open("PUT", resp.url, true);
+	// xhr.setRequestHeader("Content-Type", "wav");
+	// xhr.onload = () => {
+	// 	if (xhr.status === 200) {
+	// 		console.log("File Upload Success");
+	// 	}
+	// };
+	// xhr.onerror = () => {
+	// 	console.log("error");
+	// };
+	// xhr.send(formData);
+	// let rs = xhr.readyState;
+	// while (rs != 4) {
+	// 	await delay(1000); //Delay to slow readyState checking
+	// 	rs = xhr.readyState;
+	// 	console.log("uploading")
+	// }
 
 	return "dlb://in/file_input_teamC.".concat("wav");
 }

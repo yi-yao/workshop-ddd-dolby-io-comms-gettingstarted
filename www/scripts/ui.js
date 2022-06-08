@@ -819,6 +819,7 @@ async function uploadFile() {
 	while (rs != 4) {
 		await delay(1000); //Delay to slow readyState checking
 		rs = xhr.readyState;
+		console.log("uploading")
 	}
 
 	return "dlb://in/file_input_teamC.".concat("wav");

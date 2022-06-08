@@ -864,6 +864,8 @@ async function startAudioAnalysis() {
 		selectedFile.disabled = true;
 
 		let fileLocation = await Promise.resolve(uploadFile().then((results) => results));
+		console.log("file location")
+		console.log(fileLocation)
 		document.getElementById("process-btn").innerText = "Running...";
 		let jobID = await startJob(fileLocation).then((results) => results);
 		let results = await checkJobStatus(jobID).then((results) => results);

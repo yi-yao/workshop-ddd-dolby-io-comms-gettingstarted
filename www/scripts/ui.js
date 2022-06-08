@@ -766,9 +766,9 @@ async function startJob(fileLocation) {
 			"x-api-key": mAPIKey,
 		},
 		body: JSON.stringify({
-			content: { silence: { threshold: -60, duration: 2 } },
-			input: fileLocation,
-			output: "dlb://out/file_output_teamC.json",
+			"content": { "silence": { "threshold": -60, "duration": 2 } },
+			"input": fileLocation,
+			"output": "dlb://out/file_output_teamC.json",
 		}),
 	};
 	console.log(options)

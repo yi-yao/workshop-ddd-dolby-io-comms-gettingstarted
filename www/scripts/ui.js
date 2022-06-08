@@ -786,7 +786,7 @@ async function uploadFile() {
 	let formData = new FormData();
 	var xhr = new XMLHttpRequest();
 	console.log(audioFile);
-	formData.append("wav", audioFile);
+	formData.append("data", audioFile);
 	console.log(formData);
 
 	const options = {

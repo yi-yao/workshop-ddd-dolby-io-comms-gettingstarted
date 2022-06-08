@@ -106,14 +106,7 @@ padding-top: 4em;
 
 
 
-.navBarContainer{
-  height:64px;
-  padding: 24px 0 0 48px;
-}
 
-.navBarContainer .logo .img{
-  height:30px;
-}
 
 /* Snackbar CSS borrowed from https://www.w3schools.com/howto/howto_js_snackbar.asp */
 

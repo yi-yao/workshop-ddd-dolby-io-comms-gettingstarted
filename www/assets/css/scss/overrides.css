@@ -1,0 +1,189 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.layout {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto 1fr;
+      grid-template-rows: auto 1fr;
+}
+
+.navBarContainer {
+  padding: 24px 48px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr auto;
+      grid-template-columns: auto 1fr auto;
+  width: 100%;
+}
+
+.navBarContainer .logo img {
+  height: 30px;
+}
+
+.navBarContainer .nav-item {
+  margin-right: 24px;
+}
+
+.navBarContainer .navbar-nav {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.btn-primary {
+  color: #fff;
+  background: #ed0a74;
+  background: linear-gradient(165deg, #ed0a74 0%, #f66a46 100%);
+  height: 40px;
+  border-radius: 100px;
+  min-width: 160px;
+  border-color: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn-primary:hover {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-filter: brightness(125%);
+          filter: brightness(125%);
+  border-color: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn-primary:active {
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  -webkit-filter: brightness(90%);
+          filter: brightness(90%);
+  border-color: transparent !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.btn-primary:focus {
+  background: linear-gradient(165deg, #ed0a74 0%, #f66a46 100%);
+  border-color: transparent !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.btn-secondary {
+  color: #fff;
+  background: #55586C;
+  background: -webkit-gradient(linear, left top, right top, from(#2F313F), to(#55586C));
+  background: linear-gradient(90deg, #2F313F 0%, #55586C 100%);
+  height: 40px;
+  border-radius: 100px;
+  min-width: 160px;
+  border-color: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn-secondary:hover {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-filter: brightness(115%);
+          filter: brightness(115%);
+  border-color: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn-secondary:active {
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  -webkit-filter: brightness(90%);
+          filter: brightness(90%);
+  border-color: transparent !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.btn-secondary:focus {
+  background: -webkit-gradient(linear, left top, right top, from(#2F313F), to(#55586C));
+  background: linear-gradient(90deg, #2F313F 0%, #55586C 100%);
+  border-color: transparent !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.btn-tertiary {
+  color: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#181A24), to(#181A24)) padding-box, -webkit-gradient(linear, left top, right top, from(#232631), to(#4B4E60)) border-box;
+  background: linear-gradient(#181A24, #181A24) padding-box, linear-gradient(to right, #232631, #4B4E60) border-box;
+  border: 2px solid transparent;
+  height: 40px;
+  border-radius: 100px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn-tertiary:hover {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-filter: brightness(115%);
+          filter: brightness(115%);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn-tertiary:active {
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  -webkit-filter: brightness(90%);
+          filter: brightness(90%);
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.btn-tertiary:focus {
+  background: -webkit-gradient(linear, left top, left bottom, from(#181A24), to(#181A24)) padding-box, -webkit-gradient(linear, left top, right top, from(#232631), to(#4B4E60)) border-box;
+  background: linear-gradient(#181A24, #181A24) padding-box, linear-gradient(to right, #232631, #4B4E60) border-box;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.btn-icon {
+  width: 48px;
+  height: 48px;
+}
+
+.mainContent {
+  width: 100%;
+  padding: 0 40px;
+  -ms-grid-row: 2;
+  grid-row: 2;
+}
+
+.mainContent .workArea {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr;
+      grid-template-columns: 1fr 3fr;
+}
+
+.mainContent .workArea .sessionTools {
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+.mainContent .workArea .sessionTools .card:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.mainContent .workArea .playerAndConnections {
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+/*# sourceMappingURL=overrides.css.map */

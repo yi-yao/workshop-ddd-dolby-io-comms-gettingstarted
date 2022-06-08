@@ -218,11 +218,11 @@ const initUI = async () => {
 
 							for (let recordingIdx = 0; recordingIdx < participants.size - 1; recordingIdx++) {
 								let retrivedUrl = checkIfRecordingsAvailable(conferenceID, recordingIdx).then((results) => results);
-								document.getElementById("upload-btn").onclick = async () => {
-									// document.getElementById("upload-btn").classList.add("d-none");
-									document.getElementById("process-btn").classList.remove("d-none");
-									startAudioAnalysis(retrivedUrl).catch((err) => console.error(err));
-								};
+								// document.getElementById("upload-btn").onclick = async () => {
+								// 	document.getElementById("upload-btn").classList.add("d-none");
+								// 	document.getElementById("process-btn").classList.remove("d-none");
+								// 	startAudioAnalysis(retrivedUrl).catch((err) => console.error(err));
+								// };
 							}
 
 							document.getElementById("process-btn").onclick = async () => {

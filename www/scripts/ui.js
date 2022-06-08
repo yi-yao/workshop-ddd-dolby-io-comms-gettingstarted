@@ -619,35 +619,48 @@ const buildVideoNode = (name, id) => {
 	let videoID = "video-" + id;
 	let randomFollowers = Math.floor(Math.random() * 10000) + 1000;
 	let color = (Math.random()>0.5) ? "#24BC5B" : "#FF4C3F";
+	let node=``;
 
-	let node = `       
-  <div id="${cardID}">
-  <div class="card">
-      <div id="${cardBodyID}" class="card-body video-card-body">
-   		<video id="${videoID}" class="video-player" autoplay="" playsinline="true" muted">
-      	</video>
-        
-		<div class="videoData">
-			<span class="primaryText">${name}</span>
-			<div class="thumbnailDetails">
-				<div style="width:6px; height:6px; background-color:${color}; margin-right:4px; border-radius:3px; float: left"></div>
-				<span class="secondaryText small">${randomFollowers}</span>
+	if(name == "Moderator")
+	{
+		node = `       
+		<div id="${cardID}">
+			<div class="card">
+				<div id="${cardBodyID}" class="card-body video-card-body">
+					<video id="${videoID}" class="video-player" autoplay="" playsinline="true" muted">
+					</video>
+					
+					<div class="videoData">
+						<span class="primaryText">WOOOOOO</span>
+						<div class="thumbnailDetails">
+							<div style="width:6px; height:6px; background-color:${color}; margin-right:4px; border-radius:3px; float: left"></div>
+							<span class="secondaryText">${randomFollowers}</span>
+						</div>
+					</div>
+				</div>
 			</div>
-          <div class="mic" style="width=16px; height=16px;"></div>
-          <div class="btn-toolbar text-sm-center d-xl-flex d-xxl-flex justify-content-xl-end align-items-xl-center justify-content-xxl-end align-items-xxl-center">
-          <div class="form-check form-switch d-none">
-          <input class="form-check-input mute-switch" data-participant="${id}" type="checkbox" role="switch" checked>
-         <label class="form-check-label text-sm-center text-info data-participant="${id} mute-label">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mic-mute-fill" viewBox="0 0 16 16">
-            <path d="M13 8c0 .564-.094 1.107-.266 1.613l-.814-.814A4.02 4.02 0 0 0 12 8V7a.5.5 0 0 1 1 0v1zm-5 4c.818 0 1.578-.245 2.212-.667l.718.719a4.973 4.973 0 0 1-2.43.923V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 1 0v1a4 4 0 0 0 4 4zm3-9v4.879L5.158 2.037A3.001 3.001 0 0 1 11 3z"/>
-            <path d="M9.486 10.607 5 6.12V8a3 3 0 0 0 4.486 2.607zm-7.84-9.253 12 12 .708-.708-12-12-.708.708z"/>
-            </svg>
-         </label>
-        </div>
-          </div>
-      </div>
-  </div>
-  </div>`;
+		</div>`;
+	}
+	else
+	{
+		node = `       
+		<div id="${cardID}">
+			<div class="card">
+				<div id="${cardBodyID}" class="card-body video-card-body">
+					<video id="${videoID}" class="video-player" autoplay="" playsinline="true" muted">
+					</video>
+					
+					<div class="videoData">
+						<span class="primaryText">${name}</span>
+						<div class="thumbnailDetails">
+							<div style="width:6px; height:6px; background-color:${color}; margin-right:4px; border-radius:3px; float: left"></div>
+							<span class="secondaryText">${randomFollowers}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>`;
+	}
 	return node;
 };
 

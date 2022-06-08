@@ -65,7 +65,7 @@ const initUI = async () => {
 
 	document.getElementById("join-btn").onclick = async () => {
 
-		document.getElementById("join-btn").text="Joining ...";
+		document.getElementById("join-btn").text = "Joining ...";
 
 		// open a session with participant object
 		await VoxeetSDK.session
@@ -116,7 +116,7 @@ const initUI = async () => {
 						document.getElementById("joinForm").classList.add("d-none");
 						document.getElementById("collaborationRoom").classList.remove("d-none");
 						document.getElementById("settingsBar").classList.remove("d-none");
-						
+
 
 
 						//conditional
@@ -509,20 +509,22 @@ const addVideoNode = (participant, stream) => {
 			videoNode.classList.remove("flipped-video");
 		}
 
-		videoNode.setAttribute("height", "100px");
-		videoNode.setAttribute("width", "140px");
 		videoNode.setAttribute("playsinline", true);
 		videoNode.muted = true;
 		videoNode.setAttribute("autoplay", "autoplay");
 
 		// insert the video card
-		if(participant.info.name == "Moderator")
-		{
+		if (participant.info.name == "Moderator") {
+			videoNode.setAttribute("height", "210px");
+			videoNode.setAttribute("width", "360px");
 			document.getElementById("moderatorThumbnail").innerHTML = "";
 			document.getElementById("moderatorThumbnail").insertAdjacentHTML("beforeend", cardNode);
 		}
-		else
+		else {
+			videoNode.setAttribute("height", "100px");
+			videoNode.setAttribute("width", "140px");
 			videoContainer.insertAdjacentHTML("beforeend", cardNode);
+		}
 		// update the video element in the video card with our videoNode
 		document.getElementById("video-card-body-" + participant.id).firstElementChild.replaceWith(videoNode);
 
@@ -600,7 +602,7 @@ const addScreenShareNode = (stream) => {
 	screenShareNode.setAttribute("controls", true);
 	navigator.attachMediaStream(screenShareNode, stream);
 	const screenShareContainer = document.getElementById("screenshare-container");
-	screenShareContainer.innerHTML="";
+	screenShareContainer.innerHTML = "";
 	screenShareContainer.appendChild(screenShareNode);
 };
 
@@ -610,7 +612,7 @@ const removeScreenShareNode = () => {
 	if (screenShareNode) {
 		screenShareNode.srcObject = null; // Prevent memory leak in Chrome
 		screenShareNode.parentNode.removeChild(screenShareNode);
-		document.getElementById("screenshare-container").innerHTML="<span>Click on <b>Start screen share</b> to start sharing your screen with the rest of the participants. </span>";
+		document.getElementById("screenshare-container").innerHTML = "<span>Click on <b>Start screen share</b> to start sharing your screen with the rest of the participants. </span>";
 	}
 	document.getElementById("start-screenshare-btn").disabled = false;
 	document.getElementById("stop-screenshare-btn").disabled = true;
@@ -624,11 +626,10 @@ const buildVideoNode = (name, id) => {
 	let cardBodyID = "video-card-body-" + id;
 	let videoID = "video-" + id;
 	let randomFollowers = Math.floor(Math.random() * 10000) + 1000;
-	let color = (Math.random()>0.5) ? "#24BC5B" : "#FF4C3F";
-	let node=``;
+	let color = (Math.random() > 0.5) ? "#24BC5B" : "#FF4C3F";
+	let node = ``;
 
-	if(name == "Moderator")
-	{
+	if (name == "Moderator") {
 		node = `       
 		<div id="${cardID}">
 			<div class="card">
@@ -647,8 +648,7 @@ const buildVideoNode = (name, id) => {
 			</div>
 		</div>`;
 	}
-	else
-	{
+	else {
 		node = `       
 		<div id="${cardID}">
 			<div class="card">

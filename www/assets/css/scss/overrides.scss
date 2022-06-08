@@ -208,6 +208,11 @@ body {
 
             .screenShareContent {
                 grid-row: 1;
+                display: flex;
+                align-items: center;
+                border: 8px solid #181A24;
+                border-radius: 16px 0 16px 0;
+                background-color: #13141C;
 
             }
 
@@ -239,6 +244,7 @@ body {
                         grid-row: 2;
                         display: flex;
                         flex-direction: column;
+                        margin-left: 4px;
 
                         .thumbnailDetails{
                             display: flex;

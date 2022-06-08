@@ -245,6 +245,15 @@ body {
 .mainContent .workArea .videoContent .screenShareContent {
   -ms-grid-row: 1;
   grid-row: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 8px solid #181A24;
+  border-radius: 16px 0 16px 0;
+  background-color: #13141C;
 }
 
 .mainContent .workArea .videoContent .playersThumbnails {
@@ -290,6 +299,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-left: 4px;
 }
 
 .mainContent .workArea .videoContent .playersThumbnails .video-card-body .videoData .thumbnailDetails {

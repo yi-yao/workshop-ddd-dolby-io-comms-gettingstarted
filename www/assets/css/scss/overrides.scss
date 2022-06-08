@@ -198,9 +198,24 @@ body {
                 background-color: #181A24;
                 border-radius: 36px;
 
-                .video-player {
-                    width: 140px;
-                    height: 100px;
+
+                .video-card-body {
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    gap:8px;
+
+                    .video-player {
+                        grid-column: 1;
+                        width: 140px;
+                        height: 100px;
+                    }
+
+                    .videoData{
+                        grid-column: 2;
+                        span{
+                            @include primaryText;
+                        }
+                    }
                 }
             }
 

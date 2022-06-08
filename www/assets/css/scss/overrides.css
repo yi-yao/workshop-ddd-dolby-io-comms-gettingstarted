@@ -238,9 +238,29 @@ body {
   border-radius: 36px;
 }
 
-.mainContent .workArea .videoContent .playersThumbnails .video-player {
+.mainContent .workArea .videoContent .playersThumbnails .video-card-body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  gap: 8px;
+}
+
+.mainContent .workArea .videoContent .playersThumbnails .video-card-body .video-player {
+  -ms-grid-column: 1;
+  grid-column: 1;
   width: 140px;
   height: 100px;
+}
+
+.mainContent .workArea .videoContent .playersThumbnails .video-card-body .videoData {
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+.mainContent .workArea .videoContent .playersThumbnails .video-card-body .videoData span {
+  color: #ffffff !important;
+  font-size: 16px;
 }
 
 .mainContent .workArea .playerAndConnections {

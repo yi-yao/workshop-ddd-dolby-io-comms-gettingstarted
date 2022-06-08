@@ -680,6 +680,18 @@ const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 //I know it is insecure, but only use it for demo purpose.
 const API_KEY = "xi0n0DImNYJKGrZSJJXFDm7ZJrVZvC4G"
 
+async function jwtToken() {
+	return fetch(jwtServerURL, {
+	  method: 'post'
+	})
+	  .then((res) => {
+		return res.json();
+	  })
+	  .then((json) => json.access_token)
+	  .catch((error) => {
+		console.error(error);
+	  });
+}
 
 async function getResults() {
 	//Gets and displays the results of the Analyze job

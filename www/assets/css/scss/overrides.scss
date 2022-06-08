@@ -1,6 +1,5 @@
 @mixin primaryText {
     color: #ffffff !important;
-    font-family: "Avenir Next LT Pro";
     font-size: 16px;
 }
 
@@ -115,11 +114,13 @@ body {
     justify-content: center;
     align-items: center;
 
-    &:hover, &:focus, &:active{
+    &:hover,
+    &:focus,
+    &:active {
         color: #fff;
     }
 
-   
+
 
     &:hover {
         transition: all 0.3s ease-in-out;
@@ -160,9 +161,14 @@ body {
         height: 100%;
         display: grid;
         grid-template-columns: 1fr 3fr;
+        gap:36px;
+        padding-bottom: 24px;
 
         .sessionTools {
             grid-column: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
 
             .card {
                 padding: 12px;
@@ -170,6 +176,27 @@ body {
                 &:not(:last-child) {
                     margin-bottom: 24px;
                 }
+            }
+
+        }
+
+        .videoContent {
+            grid-column: 2;
+            display: grid;
+            grid-template-rows: 1fr auto;
+
+
+            .screenShareContent {
+                grid-row: 1;
+
+            }
+
+
+            .playersThumbnails {
+                grid-row: 2;
+                height: 200px;
+                background-color: #181A24;
+                border-radius: 36px;
             }
 
         }

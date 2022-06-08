@@ -189,11 +189,23 @@ body {
   display: grid;
   -ms-grid-columns: 1fr 3fr;
       grid-template-columns: 1fr 3fr;
+  gap: 36px;
+  padding-bottom: 24px;
 }
 
 .mainContent .workArea .sessionTools {
   -ms-grid-column: 1;
   grid-column: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .mainContent .workArea .sessionTools .card {
@@ -202,6 +214,28 @@ body {
 
 .mainContent .workArea .sessionTools .card:not(:last-child) {
   margin-bottom: 24px;
+}
+
+.mainContent .workArea .videoContent {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr auto;
+      grid-template-rows: 1fr auto;
+}
+
+.mainContent .workArea .videoContent .screenShareContent {
+  -ms-grid-row: 1;
+  grid-row: 1;
+}
+
+.mainContent .workArea .videoContent .playersThumbnails {
+  -ms-grid-row: 2;
+  grid-row: 2;
+  height: 200px;
+  background-color: #181A24;
+  border-radius: 36px;
 }
 
 .mainContent .workArea .playerAndConnections {
@@ -245,7 +279,6 @@ body {
 
 .form-check.form-switch .text-info {
   color: #ffffff !important;
-  font-family: "Avenir Next LT Pro";
   font-size: 16px;
   margin-left: 8px;
 }

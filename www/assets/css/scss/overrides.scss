@@ -235,6 +235,11 @@ body {
                         span{
                             @include primaryText;
                         }
+
+                        .thumbnailDetails{
+                            display: flex;
+                            align-items: center;
+                        }
                     }
                 }
             }

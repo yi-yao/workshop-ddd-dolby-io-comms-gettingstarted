@@ -290,6 +290,15 @@ body {
   font-size: 16px;
 }
 
+.mainContent .workArea .videoContent .playersThumbnails .video-card-body .videoData .thumbnailDetails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .mainContent .workArea .playerAndConnections {
   -ms-grid-column: 2;
   grid-column: 2;

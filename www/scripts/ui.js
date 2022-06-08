@@ -632,7 +632,7 @@ const buildVideoNode = (name, id) => {
 	let color = (Math.random()>0.5) ? "#24BC5B" : "#FF4C3F";
 
 	let node = `       
-  <div id="${cardID}"  class="col.12 col-sm-4">
+  <div id="${cardID}">
   <div class="card">
       <div id="${cardBodyID}" class="card-body video-card-body">
    		<video id="${videoID}" class="video-player" autoplay="" playsinline="true" muted">
@@ -641,7 +641,7 @@ const buildVideoNode = (name, id) => {
 		<div class="videoData">
 			<span>${name}</span>
 			<div class="thumbnailDetails">
-				<div style="width:6px; height:6px; background-color:'${color}' margin-right:4px; float: left"</div>
+				<div style="width:6px; height:6px; background-color:'${color}' margin-right:4px; border-radius:3px; float: left"></div>
 				<span class="secondaryText">${randomFollowers}</span>
 			</div>
           <div class="mic" style="width=16px; height=16px;"></div>

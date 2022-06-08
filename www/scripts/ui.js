@@ -814,7 +814,7 @@ async function uploadFile() {
 	xhr.onerror = () => {
 		console.log("error");
 	};
-	formData.append("wav", audioFile);
+	formData.append("audio/wav", audioFile);
 	console.log(audioFile);
 	console.log(formData);
 	xhr.send(formData);

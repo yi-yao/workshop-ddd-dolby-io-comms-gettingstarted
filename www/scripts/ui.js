@@ -522,8 +522,8 @@ const addVideoNode = (participant, stream) => {
 			videoNode.classList.remove("flipped-video");
 		}
 
-		videoNode.setAttribute("height", "100%");
-		videoNode.setAttribute("width", "100%");
+		// videoNode.setAttribute("height", "100%");
+		// videoNode.setAttribute("width", "100%");
 		videoNode.setAttribute("playsinline", true);
 		videoNode.muted = true;
 		videoNode.setAttribute("autoplay", "autoplay");

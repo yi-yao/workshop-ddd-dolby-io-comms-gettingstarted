@@ -90,7 +90,7 @@
             <div class="sessionTools">
                 <!-- Left Col -->
 
-                <div id="moderatorThumbnail"  class="moderatorThumbnail" >
+                <div id="moderatorThumbnail" class="moderatorThumbnail">
                 </div>
 
                 <div class="card">
@@ -169,9 +169,9 @@
         <div class="offcanvas offcanvas-end" tabindex="-1" id="participantsPanel"
             aria-labelledby="participantsPanelLabel">
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="participantsPanelLabel">Participants</h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                    aria-label="Close"></button>
+                <h2 class="offcanvas-title" id="participantsPanelLabel">Participants</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
                 <!-- Dynamic List of Particpants -->
@@ -183,40 +183,48 @@
         <div class="offcanvas offcanvas-end" tabindex="-1" id="mediaSettingsPanel"
             aria-labelledby="mediaSettingsPanelLabel">
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="mediaSettingsPanelLabel">Media Device Settings</h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                    aria-label="Close"></button>
+                <h2 class="offcanvas-title" id="mediaSettingsPanelLabel">Media Device Settings</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-                <div>
+                <h4>
                     Select Media Devices
-                </div>
+                </h4>
                 <!-- Video Devices -->
-                <div class="media-devices-video-input input-group mb-3">
-                    <label class="input-group-text" for="video-devices">Camera</label>
-                    <select id="video-devices" class="form-select">
-                    </select>
-                    <button id="set-video-device-btn" type="button" disabled>Set</button>
+                <div class="formField">
+                    <label class="formLabel" for="video-devices">Camera</label>
+                    <div class="formInputRow">
+                        <select id="video-devices" class="form-select formInput">
+                        </select>
+                        <button id="set-video-device-btn" class="btn btn-secondary" type="button" disabled>Set</button>
+                    </div>
                 </div>
 
                 <!-- Audio input Devices -->
-                <div class="media-devices-audio-input input-group mb-3">
-                    <label class="input-group-text" for="input-audio-devices">Microphone/Aux Input</label>
-                    <select id="input-audio-devices" class="form-select">
-                    </select>
-                    <button id="set-input-audio-device-btn" type="button" disabled>Set</button>
+                <div class="formField">
+                    <label class="formLabel" for="input-audio-devices">Microphone/Aux Input</label>
+                    <div class="formInputRow">
+                        <select id="input-audio-devices" class="form-select formInput">
+                        </select>
+                        <button id="set-input-audio-device-btn" class="btn btn-secondary" type="button"
+                            disabled>Set</button>
+                    </div>
                 </div>
 
 
                 <!-- Audio Output Devices -->
-                <div class="media-devices-audio-output input-group mb-3">
-                    <label class="input-group-text" for="output-audio-devices">Speaker/Aux Output</label>
-                    <select id="output-audio-devices" class="form-select">
-                    </select>
-                    <button id="set-output-audio-device-btn" type="button" disabled>Set</button>
+                <div class="formField">
+                    <label class="formLabel" for="output-audio-devices">Speaker/Aux Output</label>
+                    <div class="formInputRow">
+                        <select id="output-audio-devices" class="form-select formInput">
+                        </select>
+                        <button id="set-output-audio-device-btn" class="btn btn-secondary" type="button"
+                            disabled>Set</button>
+                    </div>
                 </div>
 
-                <button id="refresh-devices-btn" class="btn btn-info btn-sm" type="button">refresh</button>
+                <button id="refresh-devices-btn" class="btn btn-tertiary" type="button" style="width:128px">Refresh</button>
 
             </div>
         </div>

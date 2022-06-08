@@ -37,6 +37,17 @@ h1.card-title {
   margin: 16px 0 32px 0;
 }
 
+h2 {
+  color: #ffffff !important;
+  font-size: 22px;
+}
+
+h4 {
+  color: #ffffff !important;
+  font-size: 16px;
+  margin-bottom: 32px;
+}
+
 .layout {
   display: -ms-grid;
   display: grid;
@@ -123,7 +134,7 @@ h1.card-title {
   background: linear-gradient(90deg, #2F313F 0%, #55586C 100%);
   height: 48px;
   border-radius: 100px;
-  min-width: 160px;
+  min-width: 72px;
   border: none;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -222,6 +233,10 @@ h1.card-title {
   height: 48px;
 }
 
+.btn-close {
+  color: #A0A0A9 !important;
+}
+
 .mainContent {
   width: 100%;
   padding: 0 40px;
@@ -246,37 +261,6 @@ h1.card-title {
 .mainContent.centeredDialog .card {
   width: 500px;
   padding: 0 24px;
-}
-
-.mainContent.centeredDialog .formField {
-  margin-bottom: 24px;
-}
-
-.mainContent.centeredDialog .formField .formLabel {
-  color: #6b6b7c;
-}
-
-.mainContent.centeredDialog .formField .formInput {
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  color: #fff;
-  padding: 8px 24px 8px 0;
-  border-radius: 0;
-  outline: none;
-}
-
-.mainContent.centeredDialog .formField .formInput:hover, .mainContent.centeredDialog .formField .formInput:focus, .mainContent.centeredDialog .formField .formInput:active {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.mainContent.centeredDialog .formField .formInput:hover {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-}
-
-.mainContent.centeredDialog .formField .formInput:focus {
-  border-bottom: 1px solid #f66a46;
 }
 
 .mainContent.centeredDialog .downloadFormBrief {
@@ -345,7 +329,7 @@ h1.card-title {
   -ms-grid-row: 1;
   grid-row: 1;
   width: 100%;
-  height: 210px;
+  height: 220px;
 }
 
 .mainContent .workArea .sessionTools .moderatorThumbnail .video-card-body .videoData {
@@ -516,22 +500,53 @@ h1.card-title {
   margin-left: 8px;
 }
 
-@-webkit-keyframes example {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.formField {
+  margin-bottom: 24px;
 }
 
-@keyframes example {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.formField .formLabel {
+  color: #6b6b7c;
+}
+
+.formField .formInput {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 8px 24px 8px 0;
+  border-radius: 0;
+  outline: none;
+}
+
+.formField .formInput:hover, .formField .formInput:focus, .formField .formInput:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.formField .formInput:hover {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.formField .formInput:focus {
+  border-bottom: 1px solid #f66a46;
+}
+
+.formField .formInputRow {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto;
+      grid-template-columns: 1fr auto;
+  gap: 8px;
+}
+
+.formField .formInputRow .form-select {
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+.formField .formInputRow button {
+  -ms-grid-column: 2;
+  grid-column: 2;
 }
 
 ul.checkBullets li {
@@ -592,5 +607,10 @@ ul.checkBullets li:nth-child(7n) {
 ul.checkBullets li:nth-child(8n) {
   -webkit-animation-delay: 8s;
           animation-delay: 8s;
+}
+
+.offcanvas {
+  background-color: #13141C;
+  padding: 24px;
 }
 /*# sourceMappingURL=overrides.css.map */

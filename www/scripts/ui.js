@@ -34,7 +34,7 @@ const initUI = async () => {
 		// snackbar alert for device change
 		var snackbar = document.getElementById("snackbar");
 		snackbar.className = "show";
-		snackbar.innerHTML = `You're video device has been set to: ${selectedVideoDevice.text}`;
+		snackbar.innerHTML = `Your video device has been set to: ${selectedVideoDevice.text}`;
 		setTimeout(function () {
 			snackbar.className = snackbar.className.replace("show", "");
 		}, 6000);
@@ -45,7 +45,7 @@ const initUI = async () => {
 		let selectedInputAudioDevice = inputAudioDevices.options[inputAudioDevices.selectedIndex];
 		var snackbar = document.getElementById("snackbar");
 		snackbar.className = "show";
-		snackbar.innerHTML = `You're input audio device (mic) has been set to: ${selectedInputAudioDevice.text}`;
+		snackbar.innerHTML = `Your input audio device (mic) has been set to: ${selectedInputAudioDevice.text}`;
 		setTimeout(function () {
 			snackbar.className = snackbar.className.replace("show", "");
 		}, 6000);
@@ -56,7 +56,7 @@ const initUI = async () => {
 		let selectedOutputAudioDevice = outputAudioDevices.options[outputAudioDevices.selectedIndex];
 		var snackbar = document.getElementById("snackbar");
 		snackbar.className = "show";
-		snackbar.innerHTML = `You're output audio device (speaker) has been set to: ${selectedOutputAudioDevice.text}`;
+		snackbar.innerHTML = `Your output audio device (speaker) has been set to: ${selectedOutputAudioDevice.text}`;
 		setTimeout(function () {
 			snackbar.className = snackbar.className.replace("show", "");
 		}, 6000);

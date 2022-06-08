@@ -1,10 +1,13 @@
+$dark500: #13141C;
+$lightgray300: #A0A0A9;
+
 @mixin primaryText {
     color: #ffffff !important;
     font-size: 16px;
 }
 
 @mixin secondaryText {
-    color: #A0A0A9 !important;
+    color: $lightgray300 !important;
     font-size: 16px;
 }
 
@@ -47,6 +50,17 @@ h1 {
         text-align: center;
         margin: 16px 0 32px 0;
     }
+}
+
+h2 {
+    color: #ffffff !important;
+    font-size: 22px;
+}
+
+h4 {
+    color: #ffffff !important;
+    font-size: 16px;
+    margin-bottom: 32px;
 }
 
 .layout {
@@ -119,7 +133,7 @@ h1 {
     background: linear-gradient(90deg, #2F313F 0%, #55586C 100%);
     height: 48px;
     border-radius: 100px;
-    min-width: 160px;
+    min-width: 72px;
     border: none;
     box-shadow: none;
 
@@ -202,7 +216,10 @@ h1 {
 .btn-icon {
     width: 48px;
     height: 48px;
+}
 
+.btn-close {
+   color: $lightgray300 !important;
 }
 
 .mainContent {
@@ -225,40 +242,7 @@ h1 {
             padding: 0 24px;
         }
 
-        .formField {
-
-            margin-bottom: 24px;
-
-            .formLabel {
-                color: #6b6b7c;
-            }
-
-            .formInput {
-                background-color: transparent;
-                border: none;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-                color: #fff;
-                padding: 8px 24px 8px 0;
-                border-radius: 0;
-                outline: none;
-
-
-                &:hover,
-                &:focus,
-                &:active {
-                    box-shadow: none;
-                }
-
-                &:hover {
-                    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-                }
-
-                &:focus {
-                    border-bottom: 1px solid rgba(246, 106, 70, 1);
-                }
-
-            }
-        }
+        
 
 
         .downloadFormBrief {
@@ -341,7 +325,7 @@ h1 {
                 justify-content: cent;
                 border: 8px solid #181A24;
                 border-radius: 72px 0;
-                background-color: #13141C;
+                background-color: $dark500;
 
                 span {
                     @include tertiaryText;
@@ -440,13 +424,52 @@ h1 {
 
 }
 
-@keyframes example {
-    from {
-        opacity: 0;
+.formField {
+
+    margin-bottom: 24px;
+
+    .formLabel {
+        color: #6b6b7c;
     }
 
-    to {
-        opacity: 1;
+    .formInput {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        color: #fff;
+        padding: 8px 24px 8px 0;
+        border-radius: 0;
+        outline: none;
+
+
+        &:hover,
+        &:focus,
+        &:active {
+            box-shadow: none;
+        }
+
+        &:hover {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+        }
+
+        &:focus {
+            border-bottom: 1px solid rgba(246, 106, 70, 1);
+        }
+
+    }
+
+    .formInputRow{
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 8px;
+
+        .form-select{
+            grid-column: 1;
+        }
+
+        button{
+            grid-column: 2;
+        }
     }
 }
 
@@ -474,4 +497,9 @@ ul.checkBullets {
             animation-delay: #{$i * 1}s;
         }
     }
+}
+
+.offcanvas{
+    background-color: $dark500;
+    padding: 24px;
 }

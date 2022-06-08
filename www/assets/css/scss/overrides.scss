@@ -1,3 +1,9 @@
+@mixin primaryText {
+    color: #ffffff !important;
+    font-family: "Avenir Next LT Pro";
+    font-size: 16px;
+}
+
 html,
 body {
     width: 100%;
@@ -15,6 +21,7 @@ body {
     padding: 24px 48px;
     display: grid;
     grid-template-columns: auto 1fr auto;
+    align-items: center;
     width: 100%;
 
     .logo img {
@@ -25,7 +32,7 @@ body {
         margin-right: 24px;
     }
 
-    .navbar-nav{
+    .navbar-nav {
         flex-direction: row;
     }
 }
@@ -35,16 +42,16 @@ body {
     color: #fff;
     background: rgb(237, 10, 116);
     background: linear-gradient(165deg, rgba(237, 10, 116, 1) 0%, rgba(246, 106, 70, 1) 100%);
-    height: 40px;
+    height: 48px;
     border-radius: 100px;
     min-width: 160px;
-    border-color: transparent;
+    border: none;
     box-shadow: none;
 
     &:hover {
         transition: all 0.3s ease-in-out;
         filter: brightness(125%);
-        border-color: transparent;
+        border: none;
         box-shadow: none;
     }
 
@@ -67,16 +74,16 @@ body {
     color: #fff;
     background: #55586C;
     background: linear-gradient(90deg, #2F313F 0%, #55586C 100%);
-    height: 40px;
+    height: 48px;
     border-radius: 100px;
     min-width: 160px;
-    border-color: transparent;
+    border: none;
     box-shadow: none;
 
     &:hover {
         transition: all 0.3s ease-in-out;
         filter: brightness(115%);
-        border-color: transparent;
+        border: none;
         box-shadow: none;
     }
 
@@ -95,19 +102,30 @@ body {
 
 }
 
-.btn-tertiary
- {
+.btn-tertiary {
     color: #fff;
-    background: 
+    background:
         linear-gradient(#181A24, #181A24) padding-box,
         linear-gradient(to right, #232631, #4B4E60) border-box;
     border: 2px solid transparent;
-    height: 40px;
+    height: 48px;
     border-radius: 100px;
     box-shadow: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover, &:focus, &:active{
+        color: #fff;
+    }
+
+   
 
     &:hover {
         transition: all 0.3s ease-in-out;
+        background:
+            linear-gradient(to right, #232631, #4B4E60) padding-box,
+            linear-gradient(to right, #232631, #4B4E60) border-box;
         filter: brightness(115%);
         box-shadow: none;
     }
@@ -119,7 +137,7 @@ body {
     }
 
     &:focus {
-        background: 
+        background:
             linear-gradient(#181A24, #181A24) padding-box,
             linear-gradient(to right, #232631, #4B4E60) border-box;
         box-shadow: none !important;
@@ -127,9 +145,9 @@ body {
 
 }
 
-.btn-icon{
-    width:48px;
-    height:48px;
+.btn-icon {
+    width: 48px;
+    height: 48px;
 
 }
 
@@ -139,20 +157,64 @@ body {
     grid-row: 2;
 
     .workArea {
-        height:100%;
+        height: 100%;
         display: grid;
         grid-template-columns: 1fr 3fr;
 
-        .sessionTools{
+        .sessionTools {
             grid-column: 1;
-            .card:not(:last-child){
-                margin-bottom: 24px;
+
+            .card {
+                padding: 12px;
+
+                &:not(:last-child) {
+                    margin-bottom: 24px;
+                }
             }
 
         }
 
-        .playerAndConnections{
+        .playerAndConnections {
             grid-column: 2;
         }
     }
+}
+
+.actionsBar {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    &.threeElements {
+        grid-template-columns: 1fr auto auto;
+        gap: 10px;
+    }
+}
+
+.form-check.form-switch {
+    margin-top: 16px;
+    margin-left: 8px;
+    padding: 0;
+
+    .form-check-input {
+        width: 48px !important;
+        height: 24px !important;
+        margin: 0;
+        border: none;
+        box-shadow: none;
+
+        &:hover,
+        &:focus,
+        &:active {
+            border: none;
+            box-shadow: none;
+        }
+
+
+    }
+
+    .text-info {
+        @include primaryText;
+        margin-left: 8px;
+    }
+
 }

@@ -52,6 +52,7 @@ body {
 
 .btn-primary {
   color: #fff;
+  font-size: 16px;
   background: #ed0a74;
   background: linear-gradient(165deg, #ed0a74 0%, #f66a46 100%);
   height: 48px;
@@ -91,6 +92,7 @@ body {
 
 .btn-secondary {
   color: #fff;
+  font-size: 16px;
   background: #55586C;
   background: -webkit-gradient(linear, left top, right top, from(#2F313F), to(#55586C));
   background: linear-gradient(90deg, #2F313F 0%, #55586C 100%);
@@ -132,6 +134,7 @@ body {
 
 .btn-tertiary {
   color: #fff;
+  font-size: 16px;
   background: -webkit-gradient(linear, left top, left bottom, from(#181A24), to(#181A24)) padding-box, -webkit-gradient(linear, left top, right top, from(#232631), to(#4B4E60)) border-box;
   background: linear-gradient(#181A24, #181A24) padding-box, linear-gradient(to right, #232631, #4B4E60) border-box;
   border: 2px solid transparent;
@@ -148,6 +151,10 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.btn-tertiary.textButton {
+  padding: 0 24px;
 }
 
 .btn-tertiary:hover, .btn-tertiary:focus, .btn-tertiary:active {

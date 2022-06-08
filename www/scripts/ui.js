@@ -641,7 +641,7 @@ const buildVideoNode = (name, id) => {
 		<div class="videoData">
 			<span class="primaryText">${name}</span>
 			<div class="thumbnailDetails">
-				<div style="width:6px; height:6px; background-color:${color} margin-right:4px; border-radius:3px; float: left"></div>
+				<div style="width:6px; height:6px; background-color:${color}; margin-right:4px; border-radius:3px; float: left"></div>
 				<span class="secondaryText">${randomFollowers}</span>
 			</div>
           <div class="mic" style="width=16px; height=16px;"></div>

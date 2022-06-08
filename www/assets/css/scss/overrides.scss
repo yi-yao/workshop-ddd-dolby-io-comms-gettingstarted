@@ -52,6 +52,7 @@ body {
 
 .btn-primary {
     color: #fff;
+    font-size: 16px;
     background: rgb(237, 10, 116);
     background: linear-gradient(165deg, rgba(237, 10, 116, 1) 0%, rgba(246, 106, 70, 1) 100%);
     height: 48px;
@@ -84,6 +85,7 @@ body {
 
 .btn-secondary {
     color: #fff;
+    font-size: 16px;
     background: #55586C;
     background: linear-gradient(90deg, #2F313F 0%, #55586C 100%);
     height: 48px;
@@ -116,6 +118,7 @@ body {
 
 .btn-tertiary {
     color: #fff;
+    font-size: 16px;
     background:
         linear-gradient(#181A24, #181A24) padding-box,
         linear-gradient(to right, #232631, #4B4E60) border-box;
@@ -126,6 +129,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &.textButton{
+        padding: 0 24px;
+    }
 
     &:hover,
     &:focus,

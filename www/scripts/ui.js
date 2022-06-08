@@ -785,9 +785,7 @@ async function uploadFile() {
 	let audioFile = document.getElementById("uploadInput").files[0];
 	let formData = new FormData();
 	var xhr = new XMLHttpRequest();
-	formData.append("wav", audioFile);
-	console.log(audioFile);
-	console.log(formData)
+
 
 	const options = {
 		method: "POST",
@@ -807,7 +805,7 @@ async function uploadFile() {
 	console.log(resp.url);
 
 	xhr.open("PUT", resp.url, true);
-	xhr.setRequestHeader("Content-Type", "wav");
+	//xhr.setRequestHeader("Content-Type", "wav");
 	xhr.onload = () => {
 		if (xhr.status === 200) {
 			console.log("File Upload Success");
@@ -816,6 +814,10 @@ async function uploadFile() {
 	xhr.onerror = () => {
 		console.log("error");
 	};
+	//formData.append("wav", audioFile);
+	formData.append("data", audioFile);
+	console.log(audioFile);
+	console.log(formData)
 	xhr.send(formData);
 	let rs = xhr.readyState;
 	while (rs != 4) {

@@ -1,3 +1,5 @@
+const jwtServerURL = './api/bearer-authorization';
+
 const initUI = async () => {
 	// Update the login message with the name of the user
 	document.getElementById("name-input").value = randomName;
@@ -215,6 +217,14 @@ const initUI = async () => {
 						// Upload and Processing part, shall appear after leave the meeting.
 						document.getElementById("upload-btn").classList.remove("d-none");
 						document.getElementById("process-btn").classList.add("d-none");
+
+						try {
+							for (let recordingIdx = 0; recordingIdx < participants.size - 1; recordingIdx++) {
+								let retrivedUrl = checkIfRecordingsAvailable(conferenceID, recordingIdx).then((results) => results);
+							}
+						} catch (e) {
+							alert('Something went wrong : ' + e);
+						}
 					})
 					.catch((err) => console.error(err));
 			})

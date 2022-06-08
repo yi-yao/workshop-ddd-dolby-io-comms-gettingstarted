@@ -147,10 +147,6 @@ const initUI = async () => {
 							enumerateMediaDevices();
 						}
 						// Recording locator (both video and audio) meant to be deleted in full automation
-						document.getElementById("label-fname").classList.add("d-none");
-						document.getElementById("uploadInput").classList.add("d-none");
-						document.getElementById("fileSize").classList.add("d-none");
-						document.getElementById("uploadInput").disabled = true;
 						// Upload and Processing part, shall appear after leave the meeting.
 						document.getElementById("upload-btn").classList.add("d-none");
 						document.getElementById("process-btn").classList.add("d-none");
@@ -214,10 +210,6 @@ const initUI = async () => {
 						document.getElementById("stop-recording-btn").classList.add("d-none");
 						document.getElementById("participants-settings").classList.add("d-none");
 						// Recording locator (both video and audio) meant to be deleted in full automation
-						document.getElementById("label-fname").classList.remove("d-none");
-						document.getElementById("uploadInput").classList.remove("d-none");
-						document.getElementById("fileSize").classList.remove("d-none");
-						document.getElementById("uploadInput").disabled = false;
 						// Upload and Processing part, shall appear after leave the meeting.
 						document.getElementById("upload-btn").classList.remove("d-none");
 						document.getElementById("process-btn").classList.add("d-none");
@@ -226,6 +218,17 @@ const initUI = async () => {
 							for (let recordingIdx = 0; recordingIdx < participants.size - 1; recordingIdx++) {
 								let retrivedUrl = checkIfRecordingsAvailable(conferenceID, recordingIdx).then((results) => results);
 							}
+							document.getElementById("upload-btn").onclick = async () => {
+								document.getElementById("upload-btn").classList.add("d-none");
+								document.getElementById("process-btn").classList.remove("d-none");
+								startAudioAnalysis(retrivedUrl).catch((err) => console.error(err));
+							};
+
+							document.getElementById("process-btn").onclick = async () => {
+								document.getElementById("upload-btn").classList.remove("d-none");
+								document.getElementById("process-btn").classList.add("d-none");
+
+							};
 						} catch (e) {
 							alert('Something went wrong : ' + e);
 						}
@@ -235,17 +238,7 @@ const initUI = async () => {
 			.catch((err) => console.error(err));
 	};
 
-	document.getElementById("upload-btn").onclick = async () => {
-			document.getElementById("upload-btn").classList.add("d-none");
-			document.getElementById("process-btn").classList.remove("d-none");
-			startAudioAnalysis().catch((err) => console.error(err));
-	};
 
-	document.getElementById("process-btn").onclick = async () => {
-			document.getElementById("upload-btn").classList.remove("d-none");
-			document.getElementById("process-btn").classList.add("d-none");
-
-	};
 
 	// Determine and update UI based on who is speaking
 	const beginIsSpeaking = () => {
@@ -810,107 +803,23 @@ async function startJob(fileLocation) {
 	return resp.job_id;
 }
 
-async function uploadFile() {
-	//Uploads the file to the Dolby.io server
-	const mAPIKey = API_KEY;
-	let audioFile = document.getElementById("uploadInput").files[0];
-	var formData = new FormData();
-	var xhr = new XMLHttpRequest();
 
-
-	const options = {
-		method: "POST",
-		headers: {
-			Accept: "application/json",
-			"Content-Type": "application/json",
-			"x-api-key": mAPIKey,
-		},
-		body: JSON.stringify({ url: "dlb://in/file_input_teamC.".concat("wav") }),
-	};
-	document.getElementById("process-btn").innerText = "Uploading ...";
-
-	let resp = await fetch("https://api.dolby.com/media/input", options)
-		.then((response) => response.json())
-		.catch((err) => console.error(err));
-	console.log(options)
-	console.log(resp.url);
-
-	xhr.open("PUT", resp.url, true);
-	xhr.setRequestHeader("Content-Type", "application/octet-stream");
-	xhr.onload = () => {
-		if (xhr.status === 200) {
-			console.log("File Upload Success");
-		}
-	};
-	xhr.onerror = () => {
-		console.log("error");
-	};
-	formData.append("data", audioFile);
-	console.log(audioFile);
-	console.log(formData);
-	xhr.send(formData);
-	let rs = xhr.readyState;
-	while (rs != 4) {
-		await delay(1000); //Delay to slow readyState checking
-		rs = xhr.readyState;
-		console.log("uploading")
-	}
-
-	return "dlb://in/file_input_teamC.".concat("wav");
-}
-
-function updateSize() {
-	//Function for stating the size of the selected file
-	const start_button = document.getElementById("process-btn");
-
-	let nBytes = 0,
-		oFiles = this.files,
-		nFiles = oFiles.length;
-	for (let nFileId = 0; nFileId < nFiles; nFileId++) {
-		nBytes += oFiles[nFileId].size;
-	}
-	let sOutput = (nBytes / 1000000).toFixed(2) + " Megabytes";
-	document.getElementById("fileSize").innerHTML = sOutput;
-	let fileType = this.value.split(".").at(-1);
-
-	if (validFiles.includes(fileType)) {
-		start_button.textContent = "Start Job";
-		start_button.disabled = false;
-	} else {
-		start_button.textContent = "ERROR: PICK A VALID FILE TYPE!";
-		start_button.disabled = true;
-	}
-}
-
-function enableFile() {
-	//Checks to see that the appropriate steps are being followed to start a job
-	let selectedFile = document.getElementById("uploadInput");
-	selectedFile.disabled = false;
-}
-
-async function startAudioAnalysis() {
+async function startAudioAnalysis(url) {
 	//Starts the audio analysis pipeline:
 	//Upload -> Call job -> Check Job Status - > Get Results
 
 	try {
 		console.log("Job starting");
-		let selectedFile = document.getElementById("uploadInput");
-		let fileType = selectedFile.value.split(".")[1];
-
 		document.getElementById("process-btn").disabled = true;
-		selectedFile.disabled = true;
-
-		let fileLocation = await Promise.resolve(uploadFile().then((results) => results));
+		let fileLocation = url;
 		document.getElementById("process-btn").innerText = "Running...";
 		let jobID = await startJob(fileLocation).then((results) => results);
 		let results = await checkJobStatus(jobID).then((results) => results);
 	} catch {
 		//Reset if something fails
-		document.getElementById("uploadInput").value = null;
 		document.getElementById("process-btn").disabled = false;
 		document.getElementById("process-btn").textContent = "FAILED";
 		document.getElementById("process-btn").disabled = true;
-		document.getElementById("fileSize").innerHTML = "File Size: 0";
 	}
 }
 

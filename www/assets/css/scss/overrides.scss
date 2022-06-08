@@ -506,4 +506,14 @@ ul.checkBullets {
 .offcanvas{
     background-color: $dark500;
     padding: 24px;
+
+    ul{
+        .list-group-item{
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            outline: none;
+            @include primaryText;
+        }
+    }
 }

@@ -617,4 +617,13 @@ ul.checkBullets li:nth-child(8n) {
   background-color: #13141C;
   padding: 24px;
 }
+
+.offcanvas ul .list-group-item {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  outline: none;
+  color: #ffffff !important;
+  font-size: 16px;
+}
 /*# sourceMappingURL=overrides.css.map */

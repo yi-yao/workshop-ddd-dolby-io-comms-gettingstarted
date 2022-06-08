@@ -150,7 +150,7 @@ const initUI = async () => {
 						// Recording locator (both video and audio) meant to be deleted in full automation
 						// Upload and Processing part, shall appear after leave the meeting.
 						// document.getElementById("upload-btn").classList.add("d-none");
-						document.getElementById("process-btn").classList.add("d-none");
+						// document.getElementById("process-btn").classList.add("d-none");
 
 						VoxeetSDK.recording
 							.start()
@@ -212,11 +212,11 @@ const initUI = async () => {
 								// };
 							}
 
-							document.getElementById("process-btn").onclick = async () => {
-								// document.getElementById("upload-btn").classList.remove("d-none");
-								document.getElementById("process-btn").classList.add("d-none");
+							// document.getElementById("process-btn").onclick = async () => {
+							// 	document.getElementById("upload-btn").classList.remove("d-none");
+							// 	document.getElementById("process-btn").classList.add("d-none");
 
-							};
+							// };
 						} catch (e) {
 							alert('Something went wrong : ' + e);
 						}
@@ -738,7 +738,7 @@ async function getResults() {
 		cell4.innerHTML = String(loud);
 		cell5.innerHTML = String(genre);
 	}
-	document.getElementById("process-btn").innerText = "Complete";
+	// document.getElementById("process-btn").innerText = "Complete";
 	document.getElementById("download").disabled = false;
 	document.getElementById("download").style.visibility = "visible";
 
@@ -768,8 +768,8 @@ async function checkJobStatus(jobID) {
 
 	if (result.status == "Failed" || result.status == 401) {
 		console.log("ERROR: Job Failed");
-		const start_button = document.getElementById("process-btn");
-		start_button.innerText = "FAILED!";
+		// const start_button = document.getElementById("process-btn");
+		// start_button.innerText = "FAILED!";
 		throw new Error("Job Failed: Check file type and Media API Key");
 	} else if (result.progress != "100") {
 		await delay(3000);
@@ -817,16 +817,16 @@ async function startAudioAnalysis(url) {
 
 	try {
 		console.log("Job starting");
-		document.getElementById("process-btn").disabled = true;
+		// document.getElementById("process-btn").disabled = true;
 		let fileLocation = url;
-		document.getElementById("process-btn").innerText = "Running...";
+		// document.getElementById("process-btn").innerText = "Running...";
 		let jobID = await startJob(fileLocation).then((results) => results);
 		let results = await checkJobStatus(jobID).then((results) => results);
 	} catch {
 		//Reset if something fails
-		document.getElementById("process-btn").disabled = false;
-		document.getElementById("process-btn").textContent = "FAILED";
-		document.getElementById("process-btn").disabled = true;
+		// document.getElementById("process-btn").disabled = false;
+		// document.getElementById("process-btn").textContent = "FAILED";
+		// document.getElementById("process-btn").disabled = true;
 	}
 }
 

@@ -766,9 +766,9 @@ async function startJob(fileLocation) {
 			"x-api-key": mAPIKey,
 		},
 		body: JSON.stringify({
-			"content": { "silence": { "threshold": -60, "duration": 2 } },
-			"input": fileLocation,
-			"output": "dlb://out/file_output_teamC.json",
+			content: { silence: { threshold: -60, duration: 2 } },
+			input: fileLocation,
+			output: "dlb://out/file_output_teamC.json",
 		}),
 	};
 	console.log(options)
@@ -785,9 +785,9 @@ async function uploadFile() {
 	let audioFile = document.getElementById("uploadInput").files[0];
 	let formData = new FormData();
 	var xhr = new XMLHttpRequest();
+	formData.append("wav", audioFile);
 	console.log(audioFile);
-	formData.append("data", audioFile);
-	console.log(formData);
+	console.log(formData)
 
 	const options = {
 		method: "POST",
@@ -796,7 +796,7 @@ async function uploadFile() {
 			"Content-Type": "application/json",
 			"x-api-key": mAPIKey,
 		},
-		body: JSON.stringify({ url: "dlb://in/file_input_teamC.wav") }),
+		body: JSON.stringify({ url: "dlb://in/file_input_teamC.".concat("wav") }),
 	};
 	document.getElementById("process-btn").innerText = "Uploading ...";
 

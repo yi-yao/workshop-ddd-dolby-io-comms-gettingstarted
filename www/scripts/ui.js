@@ -678,7 +678,7 @@ async function getResults() {
 		headers: { Accept: "application/octet-stream", "x-api-key": mAPIKey },
 	};
 
-	let json_loc = await fetch("https://api.dolby.com/media/output?url=dlb://out/file_output_teamC.json", options)
+	let json_loc = await fetch("https://api.dolby.com/media/output?url=dlb://out/file_output_teamC.wav", options)
 		.then((response) => response.json())
 		.catch((err) => console.error(err));
 
@@ -732,7 +732,7 @@ async function checkJobStatus(jobID) {
 	};
 
 	console.log(options);
-	let result = await fetch("https://api.dolby.com/media/analyze?job_id=".concat(jobID), options).then((response) =>
+	let result = await fetch("https://api.dolby.com/media/transcode?job_id=".concat(jobID), options).then((response) =>
 		response.json()
 	);
 	console.log(result);
@@ -766,13 +766,13 @@ async function startJob(fileLocation) {
 			"x-api-key": mAPIKey,
 		},
 		body: JSON.stringify({
-			content: { silence: { threshold: -60, duration: 2 } },
+			content: {},
 			input: fileLocation,
-			output: "dlb://out/file_output_teamC.json",
+			output: "dlb://out/file_output_teamC.wav",
 		}),
 	};
 	console.log(options)
-	let resp = await fetch("https://api.dolby.com/media/analyze", options)
+	let resp = await fetch("https://api.dolby.com/media/transcode", options)
 		.then((response) => response.json())
 		.catch((err) => console.error(err));
 	console.log(resp);

@@ -16,6 +16,11 @@ body {
   font-size: 16px;
 }
 
+.tertiaryText {
+  color: #57576a !important;
+  font-size: 16px;
+}
+
 h1 {
   color: #ffffff !important;
   font-size: 28px;
@@ -307,9 +312,20 @@ h1.card-title {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: cent;
+      -ms-flex-pack: cent;
+          justify-content: cent;
   border: 8px solid #181A24;
   border-radius: 72px 0;
   background-color: #13141C;
+}
+
+.mainContent .workArea .videoContent .screenShareContent span {
+  color: #57576a !important;
+  font-size: 16px;
+  margin: 0 auto;
+  max-width: 360px;
+  text-align: center;
 }
 
 .mainContent .workArea .videoContent .playersThumbnails {

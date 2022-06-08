@@ -8,6 +8,11 @@
     font-size: 16px;
 }
 
+@mixin tertiaryText {
+    color: #57576a !important;
+    font-size: 16px;
+}
+
 html,
 body {
     width: 100%;
@@ -22,6 +27,10 @@ body {
 
 .secondaryText {
     @include secondaryText;
+}
+
+.tertiaryText {
+    @include tertiaryText;
 }
 
 h1{
@@ -256,10 +265,17 @@ h1{
                 grid-row: 1;
                 display: flex;
                 align-items: center;
+                justify-content: cent;
                 border: 8px solid #181A24;
                 border-radius: 72px 0;
                 background-color: #13141C;
 
+                span{
+                    @include tertiaryText;
+                    margin: 0 auto;
+                    max-width: 360px;
+                    text-align: center;
+                }
             }
 
 

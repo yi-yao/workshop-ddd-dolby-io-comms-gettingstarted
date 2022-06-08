@@ -621,7 +621,7 @@ ul.checkBullets li:nth-child(8n) {
 .offcanvas ul .list-group-item {
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.21);
   outline: none;
   color: #ffffff !important;
   font-size: 16px;

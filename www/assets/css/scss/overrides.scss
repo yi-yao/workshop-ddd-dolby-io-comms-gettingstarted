@@ -511,7 +511,7 @@ ul.checkBullets {
         .list-group-item{
             background-color: transparent;
             border: none;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.21);
             outline: none;
             @include primaryText;
         }

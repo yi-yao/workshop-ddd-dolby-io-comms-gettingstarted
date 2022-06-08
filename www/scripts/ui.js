@@ -934,12 +934,12 @@ async function checkIfRecordingsAvailable(conferenceID, recordingIdx) {
 		await delay(10000);
 		checkIfRecordingsAvailable(conferenceID, recordingIdx);
 	} else {
-		// console.log("Recordings are available now !");
-		// console.log("------------------------------");
-		// console.log(recordingIdx);
+		console.log("Recordings are available now !");
+		console.log("------------------------------");
+		console.log(recordingIdx);
 		const url = result.records[0].splits[recordingIdx].url;
-		// console.log(result);
-		// console.log(url);
+		console.log(result);
+		console.log(url);
 		return url;
 	}
 }

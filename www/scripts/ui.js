@@ -516,7 +516,13 @@ const addVideoNode = (participant, stream) => {
 		videoNode.setAttribute("autoplay", "autoplay");
 
 		// insert the video card
-		videoContainer.insertAdjacentHTML("beforeend", cardNode);
+		if(participant.info.name == "Moderator")
+		{
+			document.getElementById("moderatorThumbnail".innerHTML = "";
+			document.getElementById("moderatorThumbnail").insertAdjacentHTML("beforeend", cardNode);
+		}
+		else
+			videoContainer.insertAdjacentHTML("beforeend", cardNode);
 		// update the video element in the video card with our videoNode
 		document.getElementById("video-card-body-" + participant.id).firstElementChild.replaceWith(videoNode);
 
@@ -626,12 +632,12 @@ const buildVideoNode = (name, id) => {
 		node = `       
 		<div id="${cardID}">
 			<div class="card">
-				<div id="${cardBodyID}" class="card-body video-card-body">
+				<div id="${cardBodyID}" class="card-body video-card-body largeThumbnail">
 					<video id="${videoID}" class="video-player" autoplay="" playsinline="true" muted">
 					</video>
 					
 					<div class="videoData">
-						<span class="primaryText">WOOOOOO</span>
+						<span class="primaryText">${name}</span>
 						<div class="thumbnailDetails">
 							<div style="width:6px; height:6px; background-color:${color}; margin-right:4px; border-radius:3px; float: left"></div>
 							<span class="secondaryText">${randomFollowers}</span>
@@ -646,7 +652,7 @@ const buildVideoNode = (name, id) => {
 		node = `       
 		<div id="${cardID}">
 			<div class="card">
-				<div id="${cardBodyID}" class="card-body video-card-body">
+				<div id="${cardBodyID}" class="card-body video-card-body tinyThumbnail">
 					<video id="${videoID}" class="video-player" autoplay="" playsinline="true" muted">
 					</video>
 					

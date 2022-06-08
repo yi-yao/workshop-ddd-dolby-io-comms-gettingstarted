@@ -63,7 +63,8 @@
                 <!-- Conference Alias -->
                 <div class="formField">
                     <span class="formLabel" id="inputGroup-sizing-sm">Your name</span>
-                    <input id="name-input" value="Anonymous" type="text" class="form-control formInput" aria-label="Name" aria-describedby="inputGroup-sizing-sm" />
+                    <input id="name-input" value="Anonymous" type="text" class="form-control formInput"
+                        aria-label="Name" aria-describedby="inputGroup-sizing-sm" />
                 </div>
                 <!-- Conference Alias -->
                 <div class="formField">
@@ -90,8 +91,12 @@
                 <!-- Left Col -->
 
                 <div class="card">
+                    <div id="moderatorThumbnail" >
+                    </div>
+                </div>
+
+                <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title" id="name-message"></h5>
 
                         <!-- Actions on Video and Screen Share -->
                         <div id="actions">
@@ -152,7 +157,8 @@
             <div class="videoContent">
                 <!-- Container for the Screen Share -->
                 <div id="screenshare-container" class="screenShareContent">
-                    <span>Click on <b>Start screen share</b> to start sharing your screen with the rest of the participants. </span>
+                    <span>Click on <b>Start screen share</b> to start sharing your screen with the rest of the
+                        participants. </span>
                 </div>
                 <!-- Container for the video streams -->
                 <div id="video-container" class="playersThumbnails"></div>
@@ -243,8 +249,9 @@
                                 Download enhanced recording
                             </button>
                         </a>
-                        <a id="btnBack" >
-                            <button id="btnBackHome" onClick="window.location.reload();" class="btn btn-tertiary textButton" style="width: 320px;">
+                        <a id="btnBack">
+                            <button id="btnBackHome" onClick="window.location.reload();"
+                                class="btn btn-tertiary textButton" style="width: 320px;">
                                 Join again
                             </button>
                         </a>

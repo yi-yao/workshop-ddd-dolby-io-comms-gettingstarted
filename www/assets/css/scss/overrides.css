@@ -376,7 +376,7 @@ h1.card-title {
   overflow-x: auto;
 }
 
-.mainContent .workArea .videoContent .playersThumbnails .video-card-body {
+.mainContent .workArea .videoContent .playersThumbnails .video-card-body.tinyThumbnail {
   margin-right: 36px;
   display: -ms-grid;
   display: grid;
@@ -385,14 +385,14 @@ h1.card-title {
   gap: 8px;
 }
 
-.mainContent .workArea .videoContent .playersThumbnails .video-card-body .video-player {
+.mainContent .workArea .videoContent .playersThumbnails .video-card-body.tinyThumbnail .video-player {
   -ms-grid-row: 1;
   grid-row: 1;
   width: 140px;
   height: 100px;
 }
 
-.mainContent .workArea .videoContent .playersThumbnails .video-card-body .videoData {
+.mainContent .workArea .videoContent .playersThumbnails .video-card-body.tinyThumbnail .videoData {
   -ms-grid-row: 2;
   grid-row: 2;
   display: -webkit-box;
@@ -405,7 +405,7 @@ h1.card-title {
   margin-left: 4px;
 }
 
-.mainContent .workArea .videoContent .playersThumbnails .video-card-body .videoData .thumbnailDetails {
+.mainContent .workArea .videoContent .playersThumbnails .video-card-body.tinyThumbnail .videoData .thumbnailDetails {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -414,7 +414,48 @@ h1.card-title {
           align-items: center;
 }
 
-.mainContent .workArea .videoContent .playersThumbnails .video-card-body .videoData .thumbnailDetails .secondaryText {
+.mainContent .workArea .videoContent .playersThumbnails .video-card-body.tinyThumbnail .videoData .thumbnailDetails .secondaryText {
+  font-size: 14px;
+}
+
+.mainContent .workArea .videoContent .playersThumbnails .video-card-body.largeThumbnail {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr auto;
+      grid-template-rows: 1fr auto;
+  gap: 8px;
+}
+
+.mainContent .workArea .videoContent .playersThumbnails .video-card-body.largeThumbnail .video-player {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  width: 360px;
+  height: 210px;
+}
+
+.mainContent .workArea .videoContent .playersThumbnails .video-card-body.largeThumbnail .videoData {
+  -ms-grid-row: 2;
+  grid-row: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 4px;
+}
+
+.mainContent .workArea .videoContent .playersThumbnails .video-card-body.largeThumbnail .videoData .thumbnailDetails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mainContent .workArea .videoContent .playersThumbnails .video-card-body.largeThumbnail .videoData .thumbnailDetails .secondaryText {
   font-size: 14px;
 }
 

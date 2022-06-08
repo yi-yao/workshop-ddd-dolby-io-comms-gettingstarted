@@ -242,6 +242,37 @@ h1.card-title {
   padding: 0 24px;
 }
 
+.mainContent.centeredDialog .formField {
+  margin-bottom: 24px;
+}
+
+.mainContent.centeredDialog .formField .formLabel {
+  color: #6b6b7c;
+}
+
+.mainContent.centeredDialog .formField .formInput {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 8px 24px 8px 0;
+  border-radius: 0;
+  outline: none;
+}
+
+.mainContent.centeredDialog .formField .formInput:hover, .mainContent.centeredDialog .formField .formInput:focus, .mainContent.centeredDialog .formField .formInput:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.mainContent.centeredDialog .formField .formInput:hover {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.mainContent.centeredDialog .formField .formInput:focus {
+  border-bottom: 1px solid #f66a46;
+}
+
 .mainContent.centeredDialog .downloadFormBrief {
   display: -webkit-box;
   display: -ms-flexbox;

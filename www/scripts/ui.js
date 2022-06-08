@@ -131,8 +131,8 @@ const initUI = async () => {
 						document.getElementById("stop-video-btn").classList.remove("d-none");
 						document.getElementById("start-screenshare-btn").classList.remove("d-none");
 						document.getElementById("stop-screenshare-btn").classList.add("d-none");
-						document.getElementById("start-recording-btn").classList.add("d-none");
-						document.getElementById("stop-recording-btn").classList.add("d-none");
+						// document.getElementById("start-recording-btn").classList.add("d-none");
+						// document.getElementById("stop-recording-btn").classList.add("d-none");
 						document.getElementById("participants-settings").classList.remove("d-none");
 
 						document.getElementById("label-dolby-voice").innerHTML = `Dolby Voice ${conf.params.dolbyVoice ? "On" : "Off"
@@ -174,8 +174,8 @@ const initUI = async () => {
 			.then(() => {
 				recordStatus.innerText = "";
 				//update ui
-				document.getElementById("start-recording-btn").classList.remove("d-none");
-				document.getElementById("stop-recording-btn").classList.add("d-none");
+				// document.getElementById("start-recording-btn").classList.remove("d-none");
+				// document.getElementById("stop-recording-btn").classList.add("d-none");
 				document.getElementById("record-status").classList.add("d-none");
 			})
 			.catch((err) => console.error(err));
@@ -205,8 +205,8 @@ const initUI = async () => {
 						document.getElementById("stop-audio-btn").classList.add("d-none");
 						document.getElementById("start-screenshare-btn").classList.add("d-none");
 						document.getElementById("stop-screenshare-btn").classList.add("d-none");
-						document.getElementById("start-recording-btn").classList.add("d-none");
-						document.getElementById("stop-recording-btn").classList.add("d-none");
+						// document.getElementById("start-recording-btn").classList.add("d-none");
+						// document.getElementById("stop-recording-btn").classList.add("d-none");
 						document.getElementById("participants-settings").classList.add("d-none");
 						// Recording locator (both video and audio) meant to be deleted in full automation
 						// Upload and Processing part, shall appear after leave the meeting.

@@ -604,7 +604,7 @@ const removeScreenShareNode = () => {
 	if (screenShareNode) {
 		screenShareNode.srcObject = null; // Prevent memory leak in Chrome
 		screenShareNode.parentNode.removeChild(screenShareNode);
-		screenShareNode.parentNode.innerHTML="<span>Click on <b>Start screen share</b> to start sharing your screen with the rest of the participants. </span>";
+		document.getElementById("screenshare-container").innerHTML="<span>Click on <b>Start screen share</b> to start sharing your screen with the rest of the participants. </span>";
 	}
 	document.getElementById("start-screenshare-btn").disabled = false;
 	document.getElementById("stop-screenshare-btn").disabled = true;

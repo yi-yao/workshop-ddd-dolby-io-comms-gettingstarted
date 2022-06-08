@@ -197,9 +197,14 @@ body {
                 height: 200px;
                 background-color: #181A24;
                 border-radius: 36px;
+                display: flex;
+                flex-direction: row;
+                overflow-y: hidden;
+                overflow-x: auto;
 
 
                 .video-card-body {
+                    margin-right:36px;
                     display: grid;
                     grid-template-columns: auto auto;
                     gap:8px;

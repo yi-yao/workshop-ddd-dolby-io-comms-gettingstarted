@@ -236,9 +236,19 @@ body {
   height: 200px;
   background-color: #181A24;
   border-radius: 36px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  overflow-y: hidden;
+  overflow-x: auto;
 }
 
 .mainContent .workArea .videoContent .playersThumbnails .video-card-body {
+  margin-right: 36px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto auto;

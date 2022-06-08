@@ -16,12 +16,22 @@ body {
     margin: 0;
 }
 
-.primaryText{
+.primaryText {
     @include primaryText;
 }
 
-.secondaryText{
+.secondaryText {
     @include secondaryText;
+}
+
+h1{
+    color: #ffffff !important;
+    font-size: 28px;
+
+    &.card-title{
+        text-align: center;
+        margin: 16px 0 32px 0;
+    }
 }
 
 .layout {
@@ -130,7 +140,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    &.textButton{
+    &.textButton {
         padding: 0 24px;
     }
 
@@ -176,6 +186,22 @@ body {
     width: 100%;
     padding: 0 40px;
     grid-row: 2;
+
+
+    &.centeredDialog {
+
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .card {
+            width: 500px;
+
+            padding: 0 24px;
+        }
+    }
 
     .workArea {
         height: 100%;
@@ -231,10 +257,10 @@ body {
 
 
                 .video-card-body {
-                    margin-right:36px;
+                    margin-right: 36px;
                     display: grid;
                     grid-template-rows: 1fr auto;
-                    gap:8px;
+                    gap: 8px;
 
                     .video-player {
                         grid-row: 1;
@@ -242,13 +268,13 @@ body {
                         height: 100px;
                     }
 
-                    .videoData{
+                    .videoData {
                         grid-row: 2;
                         display: flex;
                         flex-direction: column;
                         margin-left: 4px;
 
-                        .thumbnailDetails{
+                        .thumbnailDetails {
                             display: flex;
                             align-items: center;
                         }

@@ -109,10 +109,12 @@ const initUI = async () => {
 					.join(conference, joinOptions)
 					.then((conf) => {
 						//update ui
-						document.getElementById("name-input").disabled = true;
-						document.getElementById("join-btn").classList.add("d-none");
-						document.getElementById("leave-btn").classList.remove("d-none");
-						document.getElementById("nav-settings").classList.remove("d-none");
+
+						document.getElementById("joinForm").classList.add("d-none");
+						document.getElementById("collaborationRoom").classList.remove("d-none");
+						document.getElementById("settingsBar").classList.remove("d-none");
+						
+
 
 						//conditional
 						// Show and hide
@@ -131,11 +133,8 @@ const initUI = async () => {
 						document.getElementById("stop-video-btn").classList.remove("d-none");
 						document.getElementById("start-screenshare-btn").classList.remove("d-none");
 						document.getElementById("stop-screenshare-btn").classList.add("d-none");
-						// document.getElementById("start-recording-btn").classList.add("d-none");
-						// document.getElementById("stop-recording-btn").classList.add("d-none");
-						document.getElementById("participants-settings").classList.remove("d-none");
 
-						document.getElementById("label-dolby-voice").innerHTML = `Dolby Voice ${conf.params.dolbyVoice ? "On" : "Off"
+						document.getElementById("label-dolby-voice").innerHTML = `Dolby Voice is ${conf.params.dolbyVoice ? "On" : "Off"
 							}`;
 						useDolbyVoice = conf.params.dolbyVoice;
 						document.getElementById("dolby-voice-btn").checked = useDolbyVoice;

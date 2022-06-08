@@ -36,18 +36,18 @@
             <img src="assets/img/BrandmarkWordmark-White.svg" />
         </a>
 
-        <ul class="navbar-nav ms-auto">
+        <ul id="settingsBar" class="navbar-nav ms-auto d-none">
             <div class="spacer"></div>
-            <li id="nav-settings" class="nav-item">
-                <a class="btn btn-tertiary textButton" data-bs-toggle="offcanvas" href="#mediaSettingsPanel" role="button"
-                    aria-controls="mediaSettingsPanel">
+            <li class="nav-item">
+                <a class="btn btn-tertiary textButton" data-bs-toggle="offcanvas" href="#mediaSettingsPanel"
+                    role="button" aria-controls="mediaSettingsPanel">
                     Device settings
                 </a>
             </li>
 
             <li id="participants-settings" class="nav-item">
-                <a class="btn btn-tertiary textButton" data-bs-toggle="offcanvas" href="#participantsPanel" role="button"
-                    aria-controls="participantsPanel">
+                <a class="btn btn-tertiary textButton" data-bs-toggle="offcanvas" href="#participantsPanel"
+                    role="button" aria-controls="participantsPanel">
                     Participants
                 </a>
             </li>
@@ -56,35 +56,40 @@
         </ul>
     </nav>
 
-    <main class="mainContent">
+    <div id="joinForm" class="mainContent centeredDialog">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title" id="name-message">Join room</h1>
+                <!-- Conference Alias -->
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Your name</span>
+                    <input id="name-input" value="Anonymous" type="text" class="form-control" aria-label="Name"
+                        aria-describedby="inputGroup-sizing-sm" />
+                </div>
+                <!-- Conference Alias -->
+                <div class="input-group input-group-sm" style="margin-bottom: 32px;">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Conference alias</span>
+                    <input id="alias-input" value="dev-portal" type="text" class="form-control"
+                        aria-label="Conference Alias" aria-describedby="inputGroup-sizing-sm" />
+                </div>
+
+                <!-- Join or Leave a Conference -->
+
+                <div class="actionsBar" style="margin-bottom: 32px;">
+                    <button id="join-btn" class="btn btn-primary btn-sm" type="button">Join</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="collaborationRoom" class="mainContent d-none">
         <!-- <div class="container"> -->
+
         <div class="workArea">
 
             <div class="sessionTools">
                 <!-- Left Col -->
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title" id="name-message"></h5>
-                        <!-- Conference Alias -->
-                        <div class="input-group input-group-sm mb-3">
-                            <span class="input-group-text" id="inputGroup-sizing-sm">Your Name</span>
-                            <input id="name-input" value="Anonymous" type="text" class="form-control" aria-label="Name"
-                                aria-describedby="inputGroup-sizing-sm" />
-                        </div>
-                        <!-- Conference Alias -->
-                        <div class="input-group input-group-sm mb-3">
-                            <span class="input-group-text" id="inputGroup-sizing-sm">Conference Alias</span>
-                            <input id="alias-input" value="dev-portal" type="text" class="form-control"
-                                aria-label="Conference Alias" aria-describedby="inputGroup-sizing-sm" />
-                        </div>
 
-                        <!-- Join or Leave a Conference -->
-
-                        <div class="actionsBar">
-                            <button id="join-btn" class="btn btn-primary btn-sm" type="button">Join</button>
-                        </div>
-                    </div>
-                </div>
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title" id="name-message"></h5>

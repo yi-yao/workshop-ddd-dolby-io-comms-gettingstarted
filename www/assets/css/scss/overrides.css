@@ -11,6 +11,12 @@ body {
   font-size: 16px;
 }
 
+.primaryText.uppercase {
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
 .secondaryText {
   color: #A0A0A9 !important;
   font-size: 16px;
@@ -323,7 +329,11 @@ h1.card-title {
   margin-bottom: 24px;
 }
 
-.mainContent .workArea .sessionTools .video-card-body {
+.mainContent .workArea .sessionTools .moderatorThumbnail {
+  margin-bottom: 24px;
+}
+
+.mainContent .workArea .sessionTools .moderatorThumbnail .video-card-body {
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 1fr auto;
@@ -331,14 +341,14 @@ h1.card-title {
   gap: 8px;
 }
 
-.mainContent .workArea .sessionTools .video-card-body .video-player {
+.mainContent .workArea .sessionTools .moderatorThumbnail .video-card-body .video-player {
   -ms-grid-row: 1;
   grid-row: 1;
   width: 100%;
   height: 210px;
 }
 
-.mainContent .workArea .sessionTools .video-card-body .videoData {
+.mainContent .workArea .sessionTools .moderatorThumbnail .video-card-body .videoData {
   -ms-grid-row: 2;
   grid-row: 2;
   display: -webkit-box;
@@ -351,10 +361,9 @@ h1.card-title {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: 4px;
 }
 
-.mainContent .workArea .sessionTools .video-card-body .videoData .thumbnailDetails {
+.mainContent .workArea .sessionTools .moderatorThumbnail .video-card-body .videoData .thumbnailDetails {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -363,7 +372,7 @@ h1.card-title {
           align-items: center;
 }
 
-.mainContent .workArea .sessionTools .video-card-body .videoData .thumbnailDetails .secondaryText {
+.mainContent .workArea .sessionTools .moderatorThumbnail .video-card-body .videoData .thumbnailDetails .secondaryText {
   font-size: 14px;
 }
 

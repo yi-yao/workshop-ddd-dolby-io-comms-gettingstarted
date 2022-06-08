@@ -185,6 +185,10 @@ const initUI = async () => {
 			})
 			.catch((err) => console.error(err));
 
+		// Access recordings
+		let conferenceID = VoxeetSDK.conference.current.id;
+		let participants = VoxeetSDK.conference.participants;
+
 		VoxeetSDK.conference
 			.leave()
 			.then(() => {

@@ -21,16 +21,16 @@ padding-top: 4em;
 }
 
 .card {
-  background: #6a11cb;
+  background: #181A24;
 
   /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 0.6), rgba(37, 117, 252, 0.6));
+  /* background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 0.6), rgba(37, 117, 252, 0.6)); */
 
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(to right, rgba(106, 17, 203, 0.6), rgba(37, 117, 252, 0.6));
+  /* background: linear-gradient(to right, rgba(106, 17, 203, 0.6), rgba(37, 117, 252, 0.6)); */
   
   border: 0px;
-  border-radius: 20px;
+  border-radius: 36px;
   
 }
 
@@ -66,13 +66,13 @@ padding-top: 4em;
 
 .gradient-custom {
   /* fallback for old browsers */
-  background: #6a11cb;
+  background: transparent;
 
   /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(to right, #6429CC, #3236CB);
+  /* background: -webkit-linear-gradient(to right, #6429CC, #3236CB); */
 
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(to right, #6429CC, #3236CB)
+  /* background: linear-gradient(to right, #6429CC, #3236CB) */
 }
 
 .gradient-custom-reverse {
@@ -88,20 +88,25 @@ padding-top: 4em;
 
 .gradient-custom-bg {
   /* fallback for old browsers */
-  background:  #252998;
+  background:  #13141C;
 
   /* Chrome 10-25, Safari 5.1-6 */
-  background-image: url('../../assets/img/dolby-io-discovery-days-illustration.png');
-  background: -webkit-linear-gradient(to left, #252998, rgba(37, 117, 252, 0.8));
+  background-image: url('../../assets/img/DottedBgTL.png');
+  background-size: 1600px;
+  background-repeat: no-repeat;
   
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background-image: url('../../assets/img/dolby-io-discovery-days-illustration.png');
+  /* background-image: url('../../assets/img/dolby-io-discovery-days-illustration.png');
   background: linear-gradient(to left, #252998, rgba(37, 117, 252, 0.8), url('../../assets/img/dolby-io-discovery-days-illustration.png'));
   background-size: 60%;
   background-repeat: no-repeat;
   background-position-x: right;
-  background-position-y: 100px;
+  background-position-y: 100px; */
 }
+
+
+
+
 
 /* Snackbar CSS borrowed from https://www.w3schools.com/howto/howto_js_snackbar.asp */
 

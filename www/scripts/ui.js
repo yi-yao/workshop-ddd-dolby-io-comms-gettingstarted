@@ -806,7 +806,6 @@ async function uploadFile() {
 
 	xhr.open("PUT", resp.url, true);
 	xhr.setRequestHeader("Content-Type", "application/octet-stream");
-	xhr.setRequestHeader("Content-Length", audioFile.size);
 	xhr.onload = () => {
 		if (xhr.status === 200) {
 			console.log("File Upload Success");

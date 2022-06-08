@@ -731,6 +731,7 @@ async function checkJobStatus(jobID) {
 		headers: { Accept: "application/json", "x-api-key": mAPIKey },
 	};
 
+	console.log(options);
 	let result = await fetch("https://api.dolby.com/media/analyze?job_id=".concat(jobID), options).then((response) =>
 		response.json()
 	);
@@ -770,7 +771,7 @@ async function startJob(fileLocation) {
 			output: "dlb://file_output_teamC.json",
 		}),
 	};
-
+	console.log(options)
 	let resp = await fetch("https://api.dolby.com/media/analyze", options)
 		.then((response) => response.json())
 		.catch((err) => console.error(err));
@@ -864,8 +865,6 @@ async function startAudioAnalysis() {
 		selectedFile.disabled = true;
 
 		let fileLocation = await Promise.resolve(uploadFile().then((results) => results));
-		console.log("file location")
-		console.log(fileLocation)
 		document.getElementById("process-btn").innerText = "Running...";
 		let jobID = await startJob(fileLocation).then((results) => results);
 		let results = await checkJobStatus(jobID).then((results) => results);

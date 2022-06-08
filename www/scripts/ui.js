@@ -805,7 +805,7 @@ async function uploadFile() {
 	console.log(resp.url);
 
 	xhr.open("PUT", resp.url, true);
-	//xhr.setRequestHeader("Content-Type", "wav");
+	xhr.setRequestHeader("Content-Type", "multipart/form-data");
 	xhr.onload = () => {
 		if (xhr.status === 200) {
 			console.log("File Upload Success");
@@ -814,8 +814,7 @@ async function uploadFile() {
 	xhr.onerror = () => {
 		console.log("error");
 	};
-	//formData.append("wav", audioFile);
-	formData.append("data", audioFile);
+	formData.append("upload", audioFile);
 	console.log(audioFile);
 	console.log(formData)
 	xhr.send(formData);

@@ -161,7 +161,7 @@ body {
         height: 100%;
         display: grid;
         grid-template-columns: 1fr 3fr;
-        gap:36px;
+        gap: 36px;
         padding-bottom: 24px;
 
         .sessionTools {
@@ -197,6 +197,11 @@ body {
                 height: 200px;
                 background-color: #181A24;
                 border-radius: 36px;
+
+                .video-player {
+                    width: 140px;
+                    height: 100px;
+                }
             }
 
         }

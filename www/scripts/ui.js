@@ -787,7 +787,7 @@ async function startJob(fileLocation) {
 			"x-api-key": mAPIKey,
 		},
 		body: JSON.stringify({
-			input: { "source" : fileLocation },
+			inputs: { "source" : fileLocation },
 			outputs: [
         		{
             "id" : "my_wav",

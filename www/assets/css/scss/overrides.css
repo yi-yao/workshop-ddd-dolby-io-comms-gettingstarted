@@ -73,6 +73,10 @@ h1.card-title {
           box-shadow: none;
 }
 
+.btn-primary.textButton {
+  padding: 0 24px;
+}
+
 .btn-primary:hover {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
@@ -112,6 +116,10 @@ h1.card-title {
   border: none;
   -webkit-box-shadow: none;
           box-shadow: none;
+}
+
+.btn-secondary.textButton {
+  padding: 0 24px;
 }
 
 .btn-secondary:hover {
@@ -227,6 +235,23 @@ h1.card-title {
 .mainContent.centeredDialog .card {
   width: 500px;
   padding: 0 24px;
+}
+
+.mainContent.centeredDialog .downloadFormBrief {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mainContent.centeredDialog .downloadFormBrief a {
+  margin: 0 auto;
 }
 
 .mainContent .workArea {

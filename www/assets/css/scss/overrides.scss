@@ -71,6 +71,10 @@ h1{
     border: none;
     box-shadow: none;
 
+    &.textButton {
+        padding: 0 24px;
+    }
+
     &:hover {
         transition: all 0.3s ease-in-out;
         filter: brightness(125%);
@@ -103,6 +107,10 @@ h1{
     min-width: 160px;
     border: none;
     box-shadow: none;
+
+    &.textButton {
+        padding: 0 24px;
+    }
 
     &:hover {
         transition: all 0.3s ease-in-out;
@@ -200,6 +208,16 @@ h1{
             width: 500px;
 
             padding: 0 24px;
+        }
+
+        .downloadFormBrief{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            a{
+                margin: 0 auto;
+            }
         }
     }
 

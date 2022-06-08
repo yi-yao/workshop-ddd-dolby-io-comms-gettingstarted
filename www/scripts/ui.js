@@ -64,6 +64,9 @@ const initUI = async () => {
 	};
 
 	document.getElementById("join-btn").onclick = async () => {
+
+		document.getElementById("join-btn").text="Joining ...";
+
 		// open a session with participant object
 		await VoxeetSDK.session
 			.open({ name: document.getElementById("name-input").value })
@@ -192,25 +195,10 @@ const initUI = async () => {
 					.close()
 					.then(() => {
 						//update ui
-						document.getElementById("join-btn").classList.remove("d-none");
-						document.getElementById("leave-btn").classList.add("d-none");
-						document.getElementById("label-dolby-voice").innerHTML = `Dolby Voice ${useDolbyVoice ? "On" : "Off"}`;
-						document.getElementById("name-input").disabled = false;
-						document.getElementById("alias-input").disabled = false;
-						//reset other ui elements
-						document.getElementById("start-video-btn").classList.add("d-none");
-						document.getElementById("stop-video-btn").classList.add("d-none");
-						document.getElementById("start-audio-btn").classList.add("d-none");
-						document.getElementById("stop-audio-btn").classList.add("d-none");
-						document.getElementById("start-screenshare-btn").classList.add("d-none");
-						document.getElementById("stop-screenshare-btn").classList.add("d-none");
-						// document.getElementById("start-recording-btn").classList.add("d-none");
-						// document.getElementById("stop-recording-btn").classList.add("d-none");
-						document.getElementById("participants-settings").classList.add("d-none");
-						// Recording locator (both video and audio) meant to be deleted in full automation
-						// Upload and Processing part, shall appear after leave the meeting.
-						// document.getElementById("upload-btn").classList.remove("d-none");
-						document.getElementById("process-btn").classList.add("d-none");
+						document.getElementById("joinForm").classList.add("d-none");
+						document.getElementById("collaborationRoom").classList.add("d-none");
+						document.getElementById("settingsBar").classList.add("d-none");
+						document.getElementById("processAndDownloadForm").classList.remove("d-none");
 
 
 						try {
@@ -245,10 +233,10 @@ const initUI = async () => {
 	// 		startAudioAnalysis().catch((err) => console.error(err));
 	// };
 
-	document.getElementById("process-btn").onclick = async () => {
-		// document.getElementById("upload-btn").classList.remove("d-none");
-		document.getElementById("process-btn").classList.add("d-none");
-	}
+	// document.getElementById("process-btn").onclick = async () => {
+	// 	// document.getElementById("upload-btn").classList.remove("d-none");
+	// 	document.getElementById("process-btn").classList.add("d-none");
+	// }
 
 
 

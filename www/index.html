@@ -141,23 +141,7 @@
                             <button id="leave-btn" class="btn btn-primary btn-sm" type="button">Leave session</button>
 
                         </div>
-                        <div class="d-none">
 
-                            <p id="record-status" class="text-sm-center text-info" style="color: red;"></p>
-
-                            <div class="btn-toolbar p-2  gap-2 text-center d-none">
-
-                                <button id="process-btn" class="btn btn-primary btn-sm d-none"
-                                    type="button">Processing</button>
-                                <br />
-                                <a id="downloadLink" download="results.json"><button id="download"
-                                        disabled="True">Download
-                                        Results</button></a>
-                                <br />
-                            </div>
-
-                            <p id="process-status" class="text-sm-center text-info" style="color: red;"></p>
-                        </div>
                     </div>
 
                 </div>
@@ -231,9 +215,45 @@
 
             </div>
         </div>
-        </div>
+    </div>
 
-        <div id="snackbar">Your video device has been set to: ............</div>
+    <div id="processAndDownloadForm" class="mainContent centeredDialog d-none">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title" id="name-message">Doing our magic...</h1>
+                <div>
+
+                    <p id="record-status" class="text-sm-center text-info" style="color: red;"></p>
+
+                    <div class="downloadFormBrief">
+
+                        <ul class="primaryText" style="margin-bottom: 32px;">
+                            <li>Improving boost</li>
+                            <li>Improving boost</li>
+                            <li>Improving boost</li>
+                            <li>Improving boost</li>
+                            <li>Improving boost</li>
+                        </ul>
+                        <a id="downloadLink" download="results.json" style="margin-bottom: 12px;">
+                            <button id="download" class="btn btn-primary textButton" style="width: 320px;">
+                                Download enhanced recording
+                            </button>
+                        </a>
+                        <a id="btnBack" >
+                            <button id="btnBackHome" onClick="window.location.reload();" class="btn btn-tertiary textButton" style="width: 320px;">
+                                Join again
+                            </button>
+                        </a>
+                        <br />
+                    </div>
+
+                    <p id="process-status" class="text-sm-center text-info" style="color: red;"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="snackbar">Your video device has been set to: ............</div>
     </main>
 
 

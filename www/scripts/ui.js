@@ -678,7 +678,7 @@ async function getResults() {
 		headers: { Accept: "application/octet-stream", "x-api-key": mAPIKey },
 	};
 
-	let json_loc = await fetch("https://api.dolby.com/media/output?url=dlb://file_output.json", options)
+	let json_loc = await fetch("https://api.dolby.com/media/output?url=dlb://file_output_teamC.json", options)
 		.then((response) => response.json())
 		.catch((err) => console.error(err));
 
@@ -767,7 +767,7 @@ async function startJob(fileLocation) {
 		body: JSON.stringify({
 			content: { silence: { threshold: -60, duration: 2 } },
 			input: fileLocation,
-			output: "dlb://file_output.json",
+			output: "dlb://file_output_teamC.json",
 		}),
 	};
 
@@ -793,7 +793,7 @@ async function uploadFile() {
 			"Content-Type": "application/json",
 			"x-api-key": mAPIKey,
 		},
-		body: JSON.stringify({ url: "dlb://file_input.".concat("wav") }),
+		body: JSON.stringify({ url: "dlb://file_input_teamC.".concat("wav") }),
 	};
 	document.getElementById("process-btn").innerText = "Uploading ...";
 
@@ -819,7 +819,7 @@ async function uploadFile() {
 		rs = xhr.readyState;
 	}
 
-	return "dlb://file_input.".concat("wav");
+	return "dlb://file_input_teamC.".concat("wav");
 }
 
 function updateSize() {

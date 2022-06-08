@@ -147,7 +147,7 @@ const initUI = async () => {
 						}
 						// Recording locator (both video and audio) meant to be deleted in full automation
 						// Upload and Processing part, shall appear after leave the meeting.
-						document.getElementById("upload-btn").classList.add("d-none");
+						// document.getElementById("upload-btn").classList.add("d-none");
 						document.getElementById("process-btn").classList.add("d-none");
 
 						VoxeetSDK.recording
@@ -210,7 +210,7 @@ const initUI = async () => {
 						document.getElementById("participants-settings").classList.add("d-none");
 						// Recording locator (both video and audio) meant to be deleted in full automation
 						// Upload and Processing part, shall appear after leave the meeting.
-						document.getElementById("upload-btn").classList.remove("d-none");
+						// document.getElementById("upload-btn").classList.remove("d-none");
 						document.getElementById("process-btn").classList.add("d-none");
 
 
@@ -219,14 +219,14 @@ const initUI = async () => {
 							for (let recordingIdx = 0; recordingIdx < participants.size - 1; recordingIdx++) {
 								let retrivedUrl = checkIfRecordingsAvailable(conferenceID, recordingIdx).then((results) => results);
 								document.getElementById("upload-btn").onclick = async () => {
-									document.getElementById("upload-btn").classList.add("d-none");
+									// document.getElementById("upload-btn").classList.add("d-none");
 									document.getElementById("process-btn").classList.remove("d-none");
 									startAudioAnalysis(retrivedUrl).catch((err) => console.error(err));
 								};
 							}
 
 							document.getElementById("process-btn").onclick = async () => {
-								document.getElementById("upload-btn").classList.remove("d-none");
+								// document.getElementById("upload-btn").classList.remove("d-none");
 								document.getElementById("process-btn").classList.add("d-none");
 
 							};
@@ -247,7 +247,7 @@ const initUI = async () => {
 	// };
 
 	document.getElementById("process-btn").onclick = async () => {
-		document.getElementById("upload-btn").classList.remove("d-none");
+		// document.getElementById("upload-btn").classList.remove("d-none");
 		document.getElementById("process-btn").classList.add("d-none");
 	}
 

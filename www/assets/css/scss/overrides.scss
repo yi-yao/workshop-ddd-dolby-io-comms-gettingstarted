@@ -287,6 +287,35 @@ h1 {
                 }
             }
 
+            .video-card-body {
+                display: grid;
+                grid-template-rows: 1fr auto;
+                gap: 8px;
+
+                .video-player {
+                    grid-row: 1;
+                    width: 100%;
+                    height: 210px;
+                }
+
+                .videoData {
+                    grid-row: 2;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-left: 4px;
+
+                    .thumbnailDetails {
+                        display: flex;
+                        align-items: center;
+
+                        .secondaryText {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+
         }
 
         .videoContent {
@@ -327,60 +356,29 @@ h1 {
 
 
                 .video-card-body {
+                    margin-right: 36px;
+                    display: grid;
+                    grid-template-rows: 1fr auto;
+                    gap: 8px;
 
-                    &.tinyThumbnail {
-                        margin-right: 36px;
-                        display: grid;
-                        grid-template-rows: 1fr auto;
-                        gap: 8px;
-
-                        .video-player {
-                            grid-row: 1;
-                            width: 140px;
-                            height: 100px;
-                        }
-
-                        .videoData {
-                            grid-row: 2;
-                            display: flex;
-                            flex-direction: column;
-                            margin-left: 4px;
-
-                            .thumbnailDetails {
-                                display: flex;
-                                align-items: center;
-
-                                .secondaryText {
-                                    font-size: 14px;
-                                }
-                            }
-                        }
+                    .video-player {
+                        grid-row: 1;
+                        width: 140px;
+                        height: 100px;
                     }
 
-                    &.largeThumbnail {
-                        display: grid;
-                        grid-template-rows: 1fr auto;
-                        gap: 8px;
+                    .videoData {
+                        grid-row: 2;
+                        display: flex;
+                        flex-direction: column;
+                        margin-left: 4px;
 
-                        .video-player {
-                            grid-row: 1;
-                            width: 360px;
-                            height: 210px;
-                        }
-
-                        .videoData {
-                            grid-row: 2;
+                        .thumbnailDetails {
                             display: flex;
-                            flex-direction: column;
                             align-items: center;
 
-                            .thumbnailDetails {
-                                display: flex;
-                                align-items: center;
-
-                                .secondaryText {
-                                    font-size: 14px;
-                                }
+                            .secondaryText {
+                                font-size: 14px;
                             }
                         }
                     }

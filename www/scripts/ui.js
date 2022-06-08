@@ -221,11 +221,11 @@ const initUI = async () => {
 			.catch((err) => console.error(err));
 	};
 
-	document.getElementById("upload-btn").onclick = async () => {
-			document.getElementById("upload-btn").classList.add("d-none");
-			document.getElementById("process-btn").classList.remove("d-none");
-			startAudioAnalysis().catch((err) => console.error(err));
-	};
+	// document.getElementById("upload-btn").onclick = async () => {
+	// 		document.getElementById("upload-btn").classList.add("d-none");
+	// 		document.getElementById("process-btn").classList.remove("d-none");
+	// 		startAudioAnalysis().catch((err) => console.error(err));
+	// };
 
 	document.getElementById("process-btn").onclick = async () => {
 			document.getElementById("upload-btn").classList.remove("d-none");

@@ -19,6 +19,9 @@ body {
   display: grid;
   -ms-grid-columns: auto 1fr auto;
       grid-template-columns: auto 1fr auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
 }
 
@@ -41,10 +44,10 @@ body {
   color: #fff;
   background: #ed0a74;
   background: linear-gradient(165deg, #ed0a74 0%, #f66a46 100%);
-  height: 40px;
+  height: 48px;
   border-radius: 100px;
   min-width: 160px;
-  border-color: transparent;
+  border: none;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -54,7 +57,7 @@ body {
   transition: all 0.3s ease-in-out;
   -webkit-filter: brightness(125%);
           filter: brightness(125%);
-  border-color: transparent;
+  border: none;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -81,10 +84,10 @@ body {
   background: #55586C;
   background: -webkit-gradient(linear, left top, right top, from(#2F313F), to(#55586C));
   background: linear-gradient(90deg, #2F313F 0%, #55586C 100%);
-  height: 40px;
+  height: 48px;
   border-radius: 100px;
   min-width: 160px;
-  border-color: transparent;
+  border: none;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -94,7 +97,7 @@ body {
   transition: all 0.3s ease-in-out;
   -webkit-filter: brightness(115%);
           filter: brightness(115%);
-  border-color: transparent;
+  border: none;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -122,15 +125,30 @@ body {
   background: -webkit-gradient(linear, left top, left bottom, from(#181A24), to(#181A24)) padding-box, -webkit-gradient(linear, left top, right top, from(#232631), to(#4B4E60)) border-box;
   background: linear-gradient(#181A24, #181A24) padding-box, linear-gradient(to right, #232631, #4B4E60) border-box;
   border: 2px solid transparent;
-  height: 40px;
+  height: 48px;
   border-radius: 100px;
   -webkit-box-shadow: none;
           box-shadow: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.btn-tertiary:hover, .btn-tertiary:focus, .btn-tertiary:active {
+  color: #fff;
 }
 
 .btn-tertiary:hover {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  background: -webkit-gradient(linear, left top, right top, from(#232631), to(#4B4E60)) padding-box, -webkit-gradient(linear, left top, right top, from(#232631), to(#4B4E60)) border-box;
+  background: linear-gradient(to right, #232631, #4B4E60) padding-box, linear-gradient(to right, #232631, #4B4E60) border-box;
   -webkit-filter: brightness(115%);
           filter: brightness(115%);
   -webkit-box-shadow: none;
@@ -178,6 +196,10 @@ body {
   grid-column: 1;
 }
 
+.mainContent .workArea .sessionTools .card {
+  padding: 12px;
+}
+
 .mainContent .workArea .sessionTools .card:not(:last-child) {
   margin-bottom: 24px;
 }
@@ -185,5 +207,46 @@ body {
 .mainContent .workArea .playerAndConnections {
   -ms-grid-column: 2;
   grid-column: 2;
+}
+
+.actionsBar {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+.actionsBar.threeElements {
+  -ms-grid-columns: 1fr auto auto;
+      grid-template-columns: 1fr auto auto;
+  gap: 10px;
+}
+
+.form-check.form-switch {
+  margin-top: 16px;
+  margin-left: 8px;
+  padding: 0;
+}
+
+.form-check.form-switch .form-check-input {
+  width: 48px !important;
+  height: 24px !important;
+  margin: 0;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.form-check.form-switch .form-check-input:hover, .form-check.form-switch .form-check-input:focus, .form-check.form-switch .form-check-input:active {
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.form-check.form-switch .text-info {
+  color: #ffffff !important;
+  font-family: "Avenir Next LT Pro";
+  font-size: 16px;
+  margin-left: 8px;
 }
 /*# sourceMappingURL=overrides.css.map */

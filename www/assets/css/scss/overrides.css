@@ -553,6 +553,24 @@ h4 {
   grid-column: 2;
 }
 
+@-webkit-keyframes bulletListAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bulletListAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 ul.checkBullets li {
   background: url("../../img/iconCheck.svg") no-repeat left center;
   padding: 5px 10px 5px 36px;
@@ -560,8 +578,8 @@ ul.checkBullets li {
   margin: 0 0 8px 0;
   vertical-align: middle;
   opacity: 0;
-  -webkit-animation-name: example;
-          animation-name: example;
+  -webkit-animation-name: bulletListAnimation;
+          animation-name: bulletListAnimation;
   -webkit-animation-duration: 0.3s;
           animation-duration: 0.3s;
   -webkit-animation-fill-mode: forwards;
